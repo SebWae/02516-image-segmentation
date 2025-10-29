@@ -1,5 +1,5 @@
 # Project 3 - Image Segmentation
-Welcome to repository of the second project of the DTU course [Introduction to Deep Learning in Computer Vision](https://kurser.dtu.dk/course/2025-2026/02516?menulanguage=en) about image segmentation. 
+Welcome to repository of the third project of the DTU course [Introduction to Deep Learning in Computer Vision](https://kurser.dtu.dk/course/2025-2026/02516?menulanguage=en) about image segmentation. 
 
 All scripts are being executed using the [DTU HPC](https://www.hpc.dtu.dk/).  
 
