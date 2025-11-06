@@ -9,12 +9,17 @@ from torchvision import transforms as T
 class DriveDataset(torch.utils.data.Dataset):
     def __init__(self, 
     root_dir='DRIVE',
-    split='train', 
     transform=None
-):
-        self.image_paths = sorted(glob(f'{root_dir}/{split}/images/*.tif'))
-        self.mask_paths = sorted(glob(f'{root_dir}/{split}/masks/*.png'))
-        self.split = split
+):      
+        # combining the pre-defined training and test folders
+        image_paths = sorted(glob(f'{root_dir}/training/images/*.tif')) + sorted(glob(f'{root_dir}/test/images/*.tif'))
+        mask_paths = sorted(glob(f'{root_dir}/training/masks/*.png')) + sorted(glob(f'{root_dir}/test/masks/*.png'))
+
+        # checking that there are equally many images and masks
+        assert len(image_paths) == len(mask_paths)
+    
+        self.image_paths = image_paths
+        self.mask_paths = mask_paths
         self.transform = transform
        
     def __len__(self):
