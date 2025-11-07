@@ -35,7 +35,9 @@ class DriveDataset(torch.utils.data.Dataset):
 
         if self.transform:
             image = self.transform(image)
+            mask = self.transform(mask)
         else:
             image = T.ToTensor()(image)
+            mask = T.ToTensor()(mask)
 
         return image, mask
