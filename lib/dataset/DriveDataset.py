@@ -31,7 +31,6 @@ class DriveDataset(torch.utils.data.Dataset):
         
         image = Image.open(image_path).convert("RGB")
         mask = Image.open(mask_path)
-        mask = T.ToTensor()(mask)
 
         if self.transform:
             image = self.transform(image)

@@ -31,11 +31,12 @@ class PH2Dataset(torch.utils.data.Dataset):
         
         image = Image.open(image_path).convert("RGB")
         mask = Image.open(mask_path)
-        mask = T.ToTensor()(mask)
 
         if self.transform:
             image = self.transform(image)
+            mask = self.transform(mask)
         else:
             image = T.ToTensor()(image)
+            mask = T.ToTensor()(mask)
 
         return image, mask
