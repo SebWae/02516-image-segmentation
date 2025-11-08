@@ -12,6 +12,7 @@ from lib.train import train_model
 
 # hyperparameters
 batch_size = 4
+dataset_name = "PH2"
 factor = 0.3
 gamma = 2.0
 img_size = 128
@@ -33,10 +34,6 @@ transform = T.Compose([
     T.ToTensor()
 ])
 
-# initialize dataset, either DriveDataset or PH2Dataset
-dataset = PH2Dataset(transform=transform)
-dataset_name = dataset.name
-
 hyperparam_vals = {"batch_size": batch_size, 
                    "dataset": dataset_name,
                    "factor": factor,
@@ -57,6 +54,12 @@ hyperparam_vals = {"batch_size": batch_size,
 # printing hyperparameter values
 for param, val in hyperparam_vals.items():
     print(f"{param}: {val}")
+
+# defining dataset
+dataset_dict = {"DRIVE": DriveDataset,
+                "PH2": PH2Dataset,
+                }
+dataset = dataset_dict[dataset_name](transform=transform)
 
 # dictionary to find model
 model_dict = {"EncDec": EncDec,
@@ -128,7 +131,7 @@ for fold, (train_idx, val_idx) in enumerate(kfold.split(train_dataset)):
     fold_results["val_dice_scores"].append(val_dice_score)
 
 # report performance across all folds 
-print("\n--- Performance across all folds ---\n")
+print("\n--- Performance across all folds ---")
 for metric, vals in fold_results.items():
     avg_val = np.mean(vals)
-    print(f"\nAvg. {metric}: {avg_val:.4f}")
+    print(f"Avg. {metric}: {avg_val:.4f}")
