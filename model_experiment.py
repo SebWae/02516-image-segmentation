@@ -21,7 +21,7 @@ loss_func = "cross_entropy"
 lr = 1e-4
 model_type = "EncDec"
 patience_scheduler = 5
-patience_train = 10
+patience_train = 20
 seed = 42
 train_prop = 0.8
 weight_decay = 1e-5
@@ -59,7 +59,7 @@ for param, val in hyperparam_vals.items():
     print(f"{param}: {val}")
 
 # dictionary to find model
-model_dict = {"EncDec": EncDec(),
+model_dict = {"EncDec": EncDec,
               }
 
 # randomly divide the dataset into a train and test set
@@ -82,7 +82,7 @@ fold_results = {"train_losses": [],
 for fold, (train_idx, val_idx) in enumerate(kfold.split(train_dataset)):
     print(f"\n--- Fold {fold + 1}/{k_folds} ---")
     # initialize model
-    model = model_dict[model_type]
+    model = model_dict[model_type]()
     model.to(device)
 
     # initialize optimizer
