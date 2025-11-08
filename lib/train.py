@@ -16,7 +16,6 @@ def train_model(model,
                 optimizer, 
                 scheduler, 
                 loss_func="cross_entropy", 
-                label_smoothing=0.1,
                 gamma=2.0,
                 n_epochs=1000, 
                 patience=5, 
@@ -35,7 +34,6 @@ def train_model(model,
     - optimizer:        Optimizer to be using during training, e.g., SGD or Adam. 
     - scheduler:        Scheduler to adjust learning rate during training. 
     - loss_func:        Loss function to be used, must be either cross-entropy, focal loss, or cross-entropy with positive weights (default is cross-entropy).
-    - label_smoothing:  Label smoothing for cross entropy loss.
     - gamma:            Gamma hyperparameter for focal loss. 
     - n_epochs:         Maximum number of epochs to train for (default value 1000).
     - patience:         Number of epochs to be ran before early stopping can be triggered (default value 5). 
