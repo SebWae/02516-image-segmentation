@@ -132,7 +132,7 @@ def train_model(model,
         # printing out the epoch results
         print(f"Epoch {epoch + 1} results:\n",
               f"Train loss: {avg_train_loss:.4f}\t Val loss: {avg_val_loss:.4f}\n",
-              f"Train dice score: {avg_train_dice:.4f}%\t Val dice score: {avg_val_dice:.4f}%\n")
+              f"Train dice score: {avg_train_dice:.4f}\t Val dice score: {avg_val_dice:.4f}\n")
         
         # increment the number of epochs 
         out_dict['n_epochs'] += 1
