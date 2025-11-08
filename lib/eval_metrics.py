@@ -17,6 +17,16 @@ def compute_dice(pred_mask, gt_mask) -> float:
     Returns: 
     -  avg_dice_score:  The computed dice score (average across masks in batch).
     """
+    # ensure channel dimension is removed
+    if pred_mask.dim() == 4:
+        pred_mask = pred_mask.squeeze(1)
+    if gt_mask.dim() == 4:
+        gt_mask = gt_mask.squeeze(1)
+
+    # make boolean
+    pred_mask = pred_mask.bool()
+    gt_mask = gt_mask.bool()
+    
     # computing intersection (pixels where both masks are 1)
     intersection = (pred_mask & gt_mask).sum(dim=(1,2))
 
