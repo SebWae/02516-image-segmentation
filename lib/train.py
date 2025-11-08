@@ -54,7 +54,7 @@ def train_model(model,
                 }
     
     # defining the loss function to be applied
-    loss_dict = {"cross_entropy":       nn.CrossEntropyLoss(label_smoothing=label_smoothing),
+    loss_dict = {"cross_entropy":       nn.BCEWithLogitsLoss(),
                  "focal_loss":          FocalLoss(gamma=gamma, alpha=None),
                  "cross_entropy_pw":    PixelWeightedCrossEntropyLoss(),
                  }
@@ -89,8 +89,9 @@ def train_model(model,
             train_losses.append(train_loss.item())
 
             # converting the predicted and ground truth masks to binary masks
-            predicted = (output >= 0.5).int()
-            mask = (mask > 0.5)
+            probs = torch.sigmoid(output)
+            predicted = (probs >= 0.5).bool()
+            mask = (mask > 0.5).bool()
 
             # computing the dice score on the training data
             train_dice = compute_dice(predicted, mask)
@@ -108,8 +109,9 @@ def train_model(model,
                     val_loss = criterion(output, mask).cpu().item()
 
                 val_losses.append(val_loss)
-                predicted = (output >= 0.5).int()
-                mask = (mask > 0.5)
+                probs = torch.sigmoid(output)
+                predicted = (probs >= 0.5).bool()
+                mask = (mask > 0.5).bool()
                 val_dice = compute_dice(predicted, mask)
                 val_dice_scores.append(val_dice)
 
@@ -150,7 +152,7 @@ def train_model(model,
                 break
         
             else:
-                print(f"Validation loss improved from {prev_val_loss:.4f} to {avg_val_loss:.4f}. Saving model...")
+                print(f"Validation loss improved from {prev_val_loss:.4f} to {avg_val_loss:.4f}.")
 
         # save current model
         if save_model:
