@@ -17,7 +17,6 @@ factor = 0.3
 gamma = 2.0
 img_size = 128
 k_folds = 8
-label_smoothing = 0.1
 loss_func = "cross_entropy"
 lr = 1e-4
 model_type = "EncDec"
@@ -111,7 +110,6 @@ for fold, (train_idx, val_idx) in enumerate(kfold.split(train_dataset)):
                            optimizer=optimizer,
                            scheduler=scheduler,
                            loss_func=loss_func,
-                           label_smoothing=label_smoothing,
                            gamma=gamma,
                            patience=patience_train,
                            save_model=False,
