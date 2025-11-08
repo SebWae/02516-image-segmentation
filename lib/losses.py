@@ -45,3 +45,25 @@ class PixelWeightedCrossEntropyLoss(nn.Module):
         loss = F.nll_loss(log_prob, targets, reduction='none')
         weighted_loss = (loss * weights).mean()
         return weighted_loss
+
+
+def compute_class_weights(targets):
+    """
+    Computes per-pixel weights based on inverse class frequency.
+    Args:
+        targets: tensor of shape (N, H, W)
+    Returns:
+        weights: tensor of shape (N, H, W)
+    """
+    # frequency of each class
+    num_fg = (targets == 1).sum().float()
+    num_bg = (targets == 0).sum().float()
+    total = num_fg + num_bg
+
+    # avoiding division by zero
+    w_fg = total / (2 * num_fg + 1e-8)
+    w_bg = total / (2 * num_bg + 1e-8)
+
+    # assigning weights
+    weights = torch.where(targets == 1, w_fg, w_bg)
+    return weights
