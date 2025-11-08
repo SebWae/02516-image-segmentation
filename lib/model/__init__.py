@@ -1,2 +1,2 @@
-# from .EncDecModel import EncDecModel
+from .EncDecModel import EncDec
 # from .UNetModel import UNetModel
