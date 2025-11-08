@@ -27,7 +27,11 @@ train_prop = 0.8
 weight_decay = 1e-5
 
 # data augmentation
-transform = T.Compose([T.Resize((img_size, img_size)),T.ToTensor()])
+transform = T.Compose([
+    T.Resize(img_size),                 # resize shorter side to img_size
+    T.CenterCrop((img_size, img_size)), # crop to square
+    T.ToTensor()
+])
 
 # initialize dataset, either DriveDataset or PH2Dataset
 dataset = PH2Dataset(transform=transform)
