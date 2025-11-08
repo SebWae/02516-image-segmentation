@@ -11,6 +11,9 @@ class DriveDataset(torch.utils.data.Dataset):
     root_dir='DRIVE',
     transform=None
 ):      
+        # dataset name
+        self.name = "DRIVE"
+
         # combining the pre-defined training and test folders
         image_paths = sorted(glob(f'{root_dir}/training/images/*.tif')) + sorted(glob(f'{root_dir}/test/images/*.tif'))
         mask_paths = sorted(glob(f'{root_dir}/training/masks/*.png')) + sorted(glob(f'{root_dir}/test/masks/*.png'))

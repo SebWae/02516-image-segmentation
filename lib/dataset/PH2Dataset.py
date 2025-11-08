@@ -11,6 +11,9 @@ class PH2Dataset(torch.utils.data.Dataset):
     root_dir='/dtu/datasets1/02516/PH2_Dataset_images',
     transform=None
 ):      
+        # dataset name
+        self.name = "PH2"
+
         # combining the pre-defined training and test folders
         image_paths = sorted(glob(f'{root_dir}/*/*_Dermoscopic_Image/*.bmp')) 
         mask_paths = sorted(glob(f'{root_dir}/*/*_lesion/*.bmp')) 
