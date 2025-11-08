@@ -19,6 +19,7 @@ k_folds = 8
 label_smoothing = 0.1
 loss_func = "cross_entropy"
 lr = 1e-4
+model_type = "EncDec"
 patience_scheduler = 5
 patience_train = 10
 seed = 42
@@ -41,6 +42,7 @@ hyperparam_vals = {"batch_size": batch_size,
                    "label_smoothing": label_smoothing,
                    "loss_func": loss_func,
                    "lr": lr,
+                   "model_type": model_type,
                    "patience_scheduler": patience_scheduler,
                    "patience_train": patience_train,
                    "seed": seed, 
@@ -52,6 +54,10 @@ hyperparam_vals = {"batch_size": batch_size,
 for param, val in hyperparam_vals.items():
     print(f"{param}: {val}")
 
+# dictionary to find model
+model_dict = {"EncDec": EncDec(),
+              }
+
 # randomly divide the dataset into a train and test set
 train_size = int(train_prop * len(dataset))
 test_size = len(dataset) - train_size
@@ -60,18 +66,6 @@ train_dataset, test_dataset = random_split(dataset, [train_size, test_size], gen
 
 # initialize device
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-# initialize model
-model = EncDec()
-model.to(device)
-
-# initialize optimizer
-optimizer = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=weight_decay)
-
-# initialize learning rate scheduler
-scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-    optimizer, mode='min', factor=factor, patience=patience_scheduler
-)
 
 # apply k-fold cross-validation
 kfold = KFold(n_splits=k_folds, shuffle=True, random_state=seed)
@@ -83,7 +77,19 @@ fold_results = {"train_losses": [],
 
 for fold, (train_idx, val_idx) in enumerate(kfold.split(train_dataset)):
     print(f"\n--- Fold {fold + 1}/{k_folds} ---")
+    # initialize model
+    model = model_dict[model_type]
+    model.to(device)
 
+    # initialize optimizer
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=weight_decay)
+
+    # initialize learning rate scheduler
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+        optimizer, mode='min', factor=factor, patience=patience_scheduler
+    )
+
+    # splits the train_dataset into a train and validation sampler
     train_subsampler = Subset(train_dataset, train_idx)
     val_subsampler = Subset(train_dataset, val_idx)
 
@@ -106,10 +112,10 @@ for fold, (train_idx, val_idx) in enumerate(kfold.split(train_dataset)):
                            )
 
     # performance metrics after final epoch
-    train_loss = out_dict["train_losses"][-1]
-    train_dice_score = out_dict["train_dice_scores"][-1]
-    val_loss = out_dict["val_losses"][-1]
-    val_dice_score = out_dict["val_dice_scores"][-1]
+    train_loss = out_dict["train_loss"][-1]
+    train_dice_score = out_dict["train_dice"][-1]
+    val_loss = out_dict["val_loss"][-1]
+    val_dice_score = out_dict["val_dice"][-1]
 
     # appending to fold_results 
     fold_results["train_losses"].append(train_loss)
