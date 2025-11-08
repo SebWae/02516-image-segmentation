@@ -3,19 +3,21 @@ import numpy as np
 from sklearn.model_selection import KFold
 import torch
 from torch.utils.data import DataLoader, random_split, Subset
+from torchvision import transforms as T
 
 from lib.dataset import DriveDataset, PH2Dataset
 from lib.model import EncDec
 from lib.train import train_model
 
-# initialize dataset, either DriveDataset or PH2Dataset
-dataset = PH2Dataset()
-dataset_name = dataset.name
 
 # hyperparameters
 batch_size = 4
 factor = 0.3
+gamma = 2.0
+img_size = 128
 k_folds = 8
+label_smoothing = 0.1
+loss_func = "cross_entropy"
 lr = 1e-4
 patience_scheduler = 5
 patience_train = 10
@@ -23,10 +25,21 @@ seed = 42
 train_prop = 0.8
 weight_decay = 1e-5
 
+# data augmentation
+transform = T.Compose([T.Resize((img_size, img_size)),T.ToTensor()])
+
+# initialize dataset, either DriveDataset or PH2Dataset
+dataset = PH2Dataset(transform=transform)
+dataset_name = dataset.name
+
 hyperparam_vals = {"batch_size": batch_size, 
                    "dataset": dataset_name,
                    "factor": factor,
+                   "gamma": gamma,
+                   "img_size": img_size,
                    "k_folds": k_folds, 
+                   "label_smoothing": label_smoothing,
+                   "loss_func": loss_func,
                    "lr": lr,
                    "patience_scheduler": patience_scheduler,
                    "patience_train": patience_train,
@@ -79,7 +92,18 @@ for fold, (train_idx, val_idx) in enumerate(kfold.split(train_dataset)):
     val_loader = DataLoader(val_subsampler, batch_size=batch_size, shuffle=False)
 
     # train and validate model on fold
-    out_dict = train_model()
+    out_dict = train_model(model=model,
+                           train_loader=train_loader,
+                           val_loader=val_loader,
+                           device=device,
+                           optimizer=optimizer,
+                           scheduler=scheduler,
+                           loss_func=loss_func,
+                           label_smoothing=label_smoothing,
+                           gamma=gamma,
+                           patience=patience_train,
+                           save_model=False,
+                           )
 
     # performance metrics after final epoch
     train_loss = out_dict["train_losses"][-1]
