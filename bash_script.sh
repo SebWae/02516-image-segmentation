@@ -4,7 +4,7 @@
 ### ------------- specify gpu request----------------
 #BSUB -gpu "num=1:mode=exclusive_process"
 ### ------------- specify job name ----------------
-#BSUB -J single_frame_cnn
+#BSUB -J EncDec_BCE_loss
 ### ------------- specify number of cores ----------------
 #BSUB -n 4
 #BSUB -R "span[hosts=1]"
@@ -18,4 +18,4 @@
 #BSUB -e OUTPUT_FILE%J.err
 
 source venv_proj3/bin/activate
-python 3D_CNN.py
+python model_experiment.py
