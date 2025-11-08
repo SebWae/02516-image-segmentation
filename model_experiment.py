@@ -116,10 +116,10 @@ for fold, (train_idx, val_idx) in enumerate(kfold.split(train_dataset)):
                            )
 
     # performance metrics after final epoch
-    train_loss = out_dict["train_loss"][-1]
-    train_dice_score = out_dict["train_dice"][-1]
-    val_loss = out_dict["val_loss"][-1]
-    val_dice_score = out_dict["val_dice"][-1]
+    train_loss = out_dict["train_loss"][-2]
+    train_dice_score = out_dict["train_dice"][-2]
+    val_loss = out_dict["val_loss"][-2]
+    val_dice_score = out_dict["val_dice"][-2]
 
     # appending to fold_results 
     fold_results["train_losses"].append(train_loss)
