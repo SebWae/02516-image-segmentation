@@ -6,16 +6,16 @@ from torch.utils.data import DataLoader, random_split, Subset
 from torchvision import transforms as T
 
 from lib.dataset import DriveDataset, PH2Dataset
-from lib.model import EncDec
+from lib.model import EncDec, UNet
 from lib.train import train_model
 
 
 # hyperparameters
 batch_size = 4
-dataset_name = "PH2"
+dataset_name = "DRIVE"
 factor = 0.3
 gamma = 2.0
-img_size = 128
+img_size = 256
 k_folds = 8
 loss_func = "cross_entropy"
 lr = 1e-4
@@ -28,7 +28,7 @@ weight_decay = 1e-5
 
 # data augmentation
 transform = T.Compose([
-    T.Resize(img_size),                 # resize shorter side to img_size
+    #T.Resize(img_size),                 # resize shorter side to img_size
     T.CenterCrop((img_size, img_size)), # crop to square
     T.ToTensor()
 ])
@@ -60,7 +60,9 @@ dataset_dict = {"DRIVE": DriveDataset,
 dataset = dataset_dict[dataset_name](transform=transform)
 
 # dictionary to find model
-model_dict = {"EncDec": EncDec,
+model_dict = {
+            "EncDec": EncDec,
+            "UNet": UNet,
               }
 
 # randomly divide the dataset into a train and test set

@@ -22,13 +22,13 @@ class EncDec(nn.Module):
         self.bottleneck_conv = nn.Conv2d(64, 64, 3, padding=1)
 
         # decoder (upsampling)
-        self.upsample0 = nn.Upsample(16)  # 8 -> 16
+        self.upsample0 = nn.Upsample(scale_factor=2, mode='bilinear', align_corners=False)  # 8 -> 16
         self.dec_conv0 = nn.Conv2d(64, 64, 3, padding=1)
-        self.upsample1 = nn.Upsample(32)  # 16 -> 32
+        self.upsample1 = nn.Upsample(scale_factor=2, mode='bilinear', align_corners=False)  # 16 -> 32
         self.dec_conv1 = nn.Conv2d(64, 64, 3, padding=1)
-        self.upsample2 = nn.Upsample(64)  # 32 -> 64
+        self.upsample2 = nn.Upsample(scale_factor=2, mode='bilinear', align_corners=False)  # 32 -> 64
         self.dec_conv2 = nn.Conv2d(64, 64, 3, padding=1)
-        self.upsample3 = nn.Upsample(128)  # 64 -> 128
+        self.upsample3 = nn.Upsample(scale_factor=2, mode='bilinear', align_corners=False)  # 64 -> 128
         self.dec_conv3 = nn.Conv2d(64, 1, 3, padding=1)
 
     def forward(self, x):
@@ -45,5 +45,5 @@ class EncDec(nn.Module):
         d0 = F.relu(self.dec_conv0(self.upsample0(b)))
         d1 = F.relu(self.dec_conv1(self.upsample1(d0)))
         d2 = F.relu(self.dec_conv2(self.upsample2(d1)))
-        d3 = self.dec_conv3(self.upsample3(d2))  # no activation
+        d3 = self.dec_conv3(self.upsample3(d2))  # logits for 2 classes (N,2,H,W)
         return d3
