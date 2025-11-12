@@ -53,6 +53,9 @@ def train_model(model,
                 "n_epochs": 0,
                 }
     
+    # converting the weight w to a pytorch tensor for cross_entropy_pw
+    w = torch.tensor([w]).to(device)
+
     # defining the loss function to be applied
     loss_dict = {"cross_entropy":       nn.BCEWithLogitsLoss(),
                  "focal_loss":          FocalLoss(gamma=gamma, alpha=None),
