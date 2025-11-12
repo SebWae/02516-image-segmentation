@@ -10,92 +10,29 @@ import torch.nn.functional as F
 # focal loss
 class FocalLoss(nn.Module):
     def __init__(self, gamma=2.0, alpha=None, reduction='mean'):
-        """
-        alpha: float (weight for class 1 in binary), or tensor/list of per-class weights for multiclass, or None
-        """
         super(FocalLoss, self).__init__()
         self.gamma = gamma
+        self.alpha = alpha
         self.reduction = reduction
-        # store alpha; convert later to device as needed
-        if alpha is None:
-            self.alpha = None
-        else:
-            if isinstance(alpha, (float, int)):
-                self.alpha = float(alpha)
-            else:
-                self.alpha = torch.tensor(alpha, dtype=torch.float)
-
-    def _to_device_alpha(self, device):
-        if isinstance(self.alpha, torch.Tensor):
-            return self.alpha.to(device)
-        return self.alpha
 
     def forward(self, inputs, targets):
-        """
-        inputs: logits with shape (N, C, H, W) or (N, 1, H, W) for binary
-        targets: (N, H, W) with class indices {0,...,C-1} for multiclass or {0,1} for binary
-        """
-        if inputs.dim() == 4 and inputs.size(1) == 1:
-            # binary focal (use logits)
-            logits = inputs.squeeze(1)              # (N, H, W)
-            targets_float = targets.float()
-            prob = torch.sigmoid(logits)
-            p_t = prob * targets_float + (1 - prob) * (1 - targets_float)
-            ce_loss = F.binary_cross_entropy_with_logits(logits, targets_float, reduction='none')  # (N,H,W)
+        if targets.dim() == 4:
+            targets = targets.squeeze(1)
 
-            alpha = self._to_device_alpha(inputs.device)
-            if alpha is None:
-                alpha_factor = 1.0
-            elif isinstance(alpha, float):
-                # alpha is weight for class 1
-                alpha_factor = targets_float * alpha + (1 - targets_float) * (1 - alpha)
-            else:
-                # alpha tensor, expect length 2
-                a = alpha.view(-1)
-                if a.numel() == 2:
-                    alpha_factor = targets_float * a[1] + (1 - targets_float) * a[0]
-                else:
-                    # fallback: no alpha
-                    alpha_factor = 1.0
+        # converting logits to probabilities
+        probs = torch.sigmoid(inputs)
 
-            loss = alpha_factor * ((1 - p_t) ** self.gamma) * ce_loss
+        # computing pt (p if mask is 1, 1-p otherwise)
+        pt = probs * targets + (1 - probs) * (1 - targets)
 
-        else:
-            # multiclass focal
-            log_prob = F.log_softmax(inputs, dim=1)       # (N, C, H, W)
-            prob = torch.exp(log_prob)
-            # standard nll per-pixel
-            ce_loss = F.nll_loss(log_prob, targets, reduction='none')  # (N,H,W)
+        # computing the focal loss of each pixel
+        focal_loss = -(1 - pt)**self.gamma * torch.log(pt)
 
-            # p_t = prob of true class
-            p_t = prob.gather(1, targets.unsqueeze(1)).squeeze(1)      # (N,H,W)
-
-            alpha = self._to_device_alpha(inputs.device)
-            if alpha is None:
-                alpha_factor = 1.0
-            elif isinstance(alpha, float):
-                # scalar alpha -> weight for class 1; build per-class alpha only if C==2
-                if inputs.size(1) == 2:
-                    a0 = 1.0 - alpha
-                    a1 = alpha
-                    alpha_factor = torch.where(targets == 1, a1, a0).to(inputs.device)
-                else:
-                    alpha_factor = 1.0
-            else:
-                # tensor of per-class weights
-                alpha_t = alpha.to(inputs.device).view(-1)
-                # index per-pixel alpha by class index
-                alpha_factor = alpha_t[targets]
-
-            loss = alpha_factor * ((1 - p_t) ** self.gamma) * ce_loss
-
-        if self.reduction == 'mean':
-            return loss.mean()
-        elif self.reduction == 'sum':
-            return loss.sum()
-        else:
-            return loss
-
+        # computing average focal loss across pixels
+        avg_focal_loss = focal_loss.mean()
+        
+        return avg_focal_loss
+ 
 
 # pixel-weighted cross entropy 
 class PixelWeightedCrossEntropyLoss(nn.Module):
