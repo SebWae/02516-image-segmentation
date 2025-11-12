@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 
 from lib.eval_metrics import compute_dice
-from lib.losses import FocalLoss, PixelWeightedCrossEntropyLoss, compute_class_weights
+from lib.losses import FocalLoss
 
 # this script should include a train function taking one of the models as input
 # applies early-stopping when validation loss increases (after x initial epochs) or only decreases by something smaller than a tolerance (e.g. e-4)
@@ -17,6 +17,7 @@ def train_model(model,
                 scheduler, 
                 loss_func="cross_entropy", 
                 gamma=2.0,
+                w=2,
                 n_epochs=1000, 
                 patience=5, 
                 tol=1e-4,
@@ -35,6 +36,7 @@ def train_model(model,
     - scheduler:        Scheduler to adjust learning rate during training. 
     - loss_func:        Loss function to be used, must be either cross-entropy, focal loss, or cross-entropy with positive weights (default is cross-entropy).
     - gamma:            Gamma hyperparameter for focal loss. 
+    - w:                Weight parameter for the cross entropy with positive weights. 
     - n_epochs:         Maximum number of epochs to train for (default value 1000).
     - patience:         Number of epochs to be ran before early stopping can be triggered (default value 5). 
     - tol:              Early stopping is applied if improvement in validation loss is lower than the tolerance (default value 0.0001).
@@ -54,14 +56,10 @@ def train_model(model,
     # defining the loss function to be applied
     loss_dict = {"cross_entropy":       nn.BCEWithLogitsLoss(),
                  "focal_loss":          FocalLoss(gamma=gamma, alpha=None),
-                 "cross_entropy_pw":    PixelWeightedCrossEntropyLoss(),
+                 "cross_entropy_pw":    nn.BCEWithLogitsLoss(pos_weight=w),
                  }
     criterion = loss_dict[loss_func]
     prev_val_loss = 1e10
-
-    # computing weights for cross entropy with positive weights
-    if loss_func == "cross_entropy_pw":
-        weights = compute_class_weights(torch.cat([mask for _, mask in train_loader], dim=0))
 
     for epoch in range(n_epochs):
         model.train()
@@ -78,10 +76,9 @@ def train_model(model,
             output = model(image)
 
             # computing the loss for the batch
-            if loss_func == "cross_entropy_pw":
-                train_loss = criterion(output, mask, weights)
-            else:
-                train_loss = criterion(output, mask)
+            train_loss = criterion(output, mask)
+
+            # updating model weights by performing a backward step
             train_loss.backward()
             optimizer.step()
             train_losses.append(train_loss.item())
@@ -100,12 +97,7 @@ def train_model(model,
             for image, mask in val_loader:
                 image, mask = image.to(device), mask.to(device)
                 output = model(image)
-
-                if loss_func == "cross_entropy_pw":
-                    val_loss = criterion(output, mask, weights).cpu().item()
-                else:
-                    val_loss = criterion(output, mask).cpu().item()
-
+                val_loss = criterion(output, mask).cpu().item()
                 val_losses.append(val_loss)
                 probs = torch.sigmoid(output)
                 predicted = (probs >= 0.5).bool()
