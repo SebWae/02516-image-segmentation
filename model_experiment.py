@@ -30,7 +30,7 @@ weight_decay = 1e-5
 transform = T.Compose([
     #T.Resize(img_size),                 # resize shorter side to img_size
     T.CenterCrop((img_size, img_size)), # crop to square
-    T.ToTensor()
+    T.ToTensor(),
 ])
 
 hyperparam_vals = {"batch_size": batch_size, 
