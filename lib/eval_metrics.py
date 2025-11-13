@@ -96,7 +96,7 @@ def evaluate_all(pred_mask, gt_mask) -> dict:
         "specificity": specificity_score(pred_mask, gt_mask),
     }
 
-metric_names = {"train_loss",
+metric_names = ["train_loss",
                 "train_dice",
                 "train_iou",
                 "train_acc",
@@ -108,4 +108,4 @@ metric_names = {"train_loss",
                 "val_acc",
                 "val_sens",
                 "val_spec",
-                }
+                ]
