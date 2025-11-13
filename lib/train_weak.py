@@ -1,7 +1,7 @@
 import torch
 import torch.nn.functional as F
-from .weak_losses import point_loss
-from .eval_metrics import compute_dice, iou_score, accuracy_score, sensitivity_score, specificity_score
+from lib.point_loss import point_loss
+from lib.eval_metrics import compute_dice, iou_score, accuracy_score, sensitivity_score, specificity_score
 
 def train_model_weak(model, train_loader, val_loader, device, optimizer, scheduler, patience=10):
     best_val = float('inf')
