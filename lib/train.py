@@ -34,7 +34,7 @@ def train_model(model,
     - device:           Device on which to perform the training (GPU if available else CPU).
     - optimizer:        Optimizer to be using during training, e.g., SGD or Adam. 
     - scheduler:        Scheduler to adjust learning rate during training. 
-    - loss_func:        Loss function to be used, must be either cross-entropy, focal loss, or cross-entropy with positive weights (default is cross-entropy).
+    - loss_func:        Loss function to be used, must be either cross_entropy, focal_loss, or cross_entropy_pw (positive weights). Default is cross_entropy.
     - gamma:            Gamma hyperparameter for focal loss. 
     - w:                Weight parameter for the cross entropy with positive weights. 
     - n_epochs:         Maximum number of epochs to train for (default value 1000).
