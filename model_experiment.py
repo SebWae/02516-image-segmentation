@@ -1,10 +1,13 @@
 # this script is used to run the actual experiments
+from collections import defaultdict
+
 import numpy as np
 from sklearn.model_selection import KFold
 import torch
 from torch.utils.data import DataLoader, random_split, Subset
 from torchvision import transforms as T
 
+from lib.eval_metrics import metric_names
 from lib.dataset import DriveDataset, PH2Dataset
 from lib.model import EncDec, UNet
 from lib.train import train_model
@@ -77,11 +80,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # apply k-fold cross-validation
 kfold = KFold(n_splits=k_folds, shuffle=True, random_state=seed)
-fold_results = {"train_losses": [],
-                "train_dice_scores": [],
-                "val_losses": [],
-                "val_dice_scores": [],
-                }
+fold_results = defaultdict(list)
 
 for fold, (train_idx, val_idx) in enumerate(kfold.split(train_dataset)):
     print(f"\n--- Fold {fold + 1}/{k_folds} ---")
@@ -114,21 +113,28 @@ for fold, (train_idx, val_idx) in enumerate(kfold.split(train_dataset)):
                            scheduler=scheduler,
                            loss_func=loss_func,
                            gamma=gamma,
+                           w=w,
                            patience=patience_train,
                            save_model=False,
                            )
 
     # performance metrics after final epoch
     train_loss = out_dict["train_loss"][-2]
-    train_dice_score = out_dict["train_dice"][-2]
+    train_dice = out_dict["train_dice"][-2]
+    train_iou = out_dict["train_iou"][-2]
+    train_acc = out_dict['train_acc'][-2]
+    train_sens = out_dict['train_sens'][-2]
+    train_spec = out_dict['train_spec'][-2]
     val_loss = out_dict["val_loss"][-2]
-    val_dice_score = out_dict["val_dice"][-2]
+    val_dice = out_dict["val_dice"][-2]
+    val_iou = out_dict['val_iou'][-2]
+    val_acc = out_dict['val_acc'][-2]
+    val_sens = out_dict['val_sens'][-2]
+    val_spec = out_dict['val_spec'][-2]
 
-    # appending to fold_results 
-    fold_results["train_losses"].append(train_loss)
-    fold_results["train_dice_scores"].append(train_dice_score)
-    fold_results["val_losses"].append(val_loss)
-    fold_results["val_dice_scores"].append(val_dice_score)
+    # appending performance metrics after final epoch to fold_results 
+    for metric in metric_names:
+        fold_results[f"{metric}"].append(out_dict[f"{metric}"][-2])
 
 # report performance across all folds 
 print("\n--- Performance across all folds ---")
