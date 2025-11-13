@@ -1,0 +1,332 @@
+Found 200 images and 200 masks.
+
+===== Training with 1 positive/negative clicks =====
+[Epoch 01] Train=13.8615 | Val=0.6983 | Dice=0.3745 | IoU=0.3072 | Acc=0.3072 | Sens=1.0000 | Spec=0.0000
+[Epoch 02] Train=13.8489 | Val=0.6997 | Dice=0.3745 | IoU=0.3072 | Acc=0.3072 | Sens=1.0000 | Spec=0.0000
+[Epoch 03] Train=13.8027 | Val=0.7003 | Dice=0.3745 | IoU=0.3072 | Acc=0.3072 | Sens=1.0000 | Spec=0.0000
+[Epoch 04] Train=13.5973 | Val=0.6972 | Dice=0.3810 | IoU=0.3145 | Acc=0.4232 | Sens=0.9787 | Spec=0.1774
+[Epoch 05] Train=12.3972 | Val=0.6321 | Dice=0.3821 | IoU=0.3226 | Acc=0.7181 | Sens=0.8287 | Spec=0.6714
+[Epoch 06] Train=9.6114 | Val=0.4460 | Dice=0.3171 | IoU=0.2695 | Acc=0.8397 | Sens=0.5499 | Spec=0.9705
+[Epoch 07] Train=9.3740 | Val=0.4298 | Dice=0.3557 | IoU=0.3013 | Acc=0.8012 | Sens=0.6891 | Spec=0.8538
+[Epoch 08] Train=7.4741 | Val=0.4180 | Dice=0.3502 | IoU=0.2968 | Acc=0.8133 | Sens=0.6702 | Spec=0.8798
+[Epoch 09] Train=7.2024 | Val=0.4505 | Dice=0.3643 | IoU=0.3093 | Acc=0.7873 | Sens=0.7379 | Spec=0.8120
+[Epoch 10] Train=7.2789 | Val=0.4490 | Dice=0.3683 | IoU=0.3139 | Acc=0.7867 | Sens=0.7580 | Spec=0.8022
+[Epoch 11] Train=7.0093 | Val=0.3865 | Dice=0.3602 | IoU=0.3087 | Acc=0.8228 | Sens=0.7111 | Spec=0.8751
+[Epoch 12] Train=6.9295 | Val=0.3725 | Dice=0.3625 | IoU=0.3120 | Acc=0.8365 | Sens=0.7083 | Spec=0.8960
+[Epoch 13] Train=7.5665 | Val=0.3747 | Dice=0.3734 | IoU=0.3234 | Acc=0.8339 | Sens=0.7497 | Spec=0.8739
+[Epoch 14] Train=5.0454 | Val=0.4091 | Dice=0.3811 | IoU=0.3310 | Acc=0.8203 | Sens=0.7963 | Spec=0.8335
+[Epoch 15] Train=6.7987 | Val=0.3819 | Dice=0.3806 | IoU=0.3315 | Acc=0.8338 | Sens=0.7866 | Spec=0.8573
+[Epoch 16] Train=5.5061 | Val=0.3357 | Dice=0.3637 | IoU=0.3197 | Acc=0.8672 | Sens=0.6856 | Spec=0.9499
+[Epoch 17] Train=5.1830 | Val=0.3356 | Dice=0.3670 | IoU=0.3232 | Acc=0.8697 | Sens=0.6924 | Spec=0.9504
+[Epoch 18] Train=6.7973 | Val=0.3329 | Dice=0.3566 | IoU=0.3155 | Acc=0.8722 | Sens=0.6553 | Spec=0.9702
+[Epoch 19] Train=6.2755 | Val=0.3356 | Dice=0.3846 | IoU=0.3374 | Acc=0.8603 | Sens=0.7703 | Spec=0.9023
+[Epoch 20] Train=6.4289 | Val=0.5087 | Dice=0.3968 | IoU=0.3426 | Acc=0.7813 | Sens=0.8808 | Spec=0.7393
+[Epoch 21] Train=7.4742 | Val=0.3334 | Dice=0.3903 | IoU=0.3439 | Acc=0.8670 | Sens=0.7737 | Spec=0.9104
+[Epoch 22] Train=6.7382 | Val=0.3186 | Dice=0.3790 | IoU=0.3349 | Acc=0.8752 | Sens=0.7269 | Spec=0.9429
+[Epoch 23] Train=5.3644 | Val=0.4041 | Dice=0.3982 | IoU=0.3469 | Acc=0.8252 | Sens=0.8453 | Spec=0.8184
+[Epoch 24] Train=5.1493 | Val=0.3144 | Dice=0.3830 | IoU=0.3388 | Acc=0.8769 | Sens=0.7395 | Spec=0.9398
+[Epoch 25] Train=5.8341 | Val=0.3427 | Dice=0.3997 | IoU=0.3516 | Acc=0.8581 | Sens=0.8178 | Spec=0.8780
+[Epoch 26] Train=5.7619 | Val=0.3117 | Dice=0.3988 | IoU=0.3536 | Acc=0.8777 | Sens=0.7872 | Spec=0.9196
+[Epoch 27] Train=5.3100 | Val=0.3023 | Dice=0.3963 | IoU=0.3518 | Acc=0.8814 | Sens=0.7706 | Spec=0.9324
+[Epoch 28] Train=5.6399 | Val=0.3475 | Dice=0.4101 | IoU=0.3609 | Acc=0.8584 | Sens=0.8410 | Spec=0.8681
+[Epoch 29] Train=4.9020 | Val=0.2899 | Dice=0.3954 | IoU=0.3515 | Acc=0.8849 | Sens=0.7526 | Spec=0.9455
+[Epoch 30] Train=4.8570 | Val=0.4382 | Dice=0.4173 | IoU=0.3658 | Acc=0.8231 | Sens=0.8922 | Spec=0.7943
+[Epoch 31] Train=5.4503 | Val=0.3043 | Dice=0.4118 | IoU=0.3654 | Acc=0.8792 | Sens=0.8177 | Spec=0.9083
+[Epoch 32] Train=5.7556 | Val=0.2870 | Dice=0.3945 | IoU=0.3533 | Acc=0.8918 | Sens=0.7318 | Spec=0.9645
+[Epoch 33] Train=5.4875 | Val=0.3371 | Dice=0.4239 | IoU=0.3763 | Acc=0.8679 | Sens=0.8584 | Spec=0.8738
+[Epoch 34] Train=4.3676 | Val=0.3294 | Dice=0.4228 | IoU=0.3758 | Acc=0.8673 | Sens=0.8504 | Spec=0.8765
+[Epoch 35] Train=4.8885 | Val=0.2887 | Dice=0.4136 | IoU=0.3695 | Acc=0.8885 | Sens=0.7886 | Spec=0.9346
+[Epoch 36] Train=4.3865 | Val=0.2937 | Dice=0.4141 | IoU=0.3692 | Acc=0.8877 | Sens=0.7950 | Spec=0.9306
+[Epoch 37] Train=5.2583 | Val=0.2961 | Dice=0.4220 | IoU=0.3760 | Acc=0.8843 | Sens=0.8326 | Spec=0.9090
+[Epoch 38] Train=4.8035 | Val=0.2771 | Dice=0.4183 | IoU=0.3752 | Acc=0.8954 | Sens=0.8005 | Spec=0.9393
+[Epoch 39] Train=5.2750 | Val=0.2865 | Dice=0.4234 | IoU=0.3782 | Acc=0.8892 | Sens=0.8298 | Spec=0.9174
+[Epoch 40] Train=5.1716 | Val=0.2987 | Dice=0.4240 | IoU=0.3777 | Acc=0.8828 | Sens=0.8433 | Spec=0.9022
+[Epoch 41] Train=4.2694 | Val=0.2703 | Dice=0.4182 | IoU=0.3747 | Acc=0.8956 | Sens=0.7949 | Spec=0.9422
+[Epoch 42] Train=4.6721 | Val=0.2910 | Dice=0.4240 | IoU=0.3789 | Acc=0.8831 | Sens=0.8374 | Spec=0.9051
+[Epoch 43] Train=4.4867 | Val=0.3209 | Dice=0.4294 | IoU=0.3825 | Acc=0.8692 | Sens=0.8676 | Spec=0.8715
+[Epoch 44] Train=4.0561 | Val=0.3087 | Dice=0.4294 | IoU=0.3824 | Acc=0.8755 | Sens=0.8538 | Spec=0.8867
+[Epoch 45] Train=5.1007 | Val=0.2704 | Dice=0.4230 | IoU=0.3789 | Acc=0.8939 | Sens=0.8055 | Spec=0.9349
+[Epoch 46] Train=4.2531 | Val=0.2758 | Dice=0.4247 | IoU=0.3802 | Acc=0.8914 | Sens=0.8238 | Spec=0.9233
+[Epoch 47] Train=4.3044 | Val=0.3181 | Dice=0.4300 | IoU=0.3827 | Acc=0.8737 | Sens=0.8760 | Spec=0.8743
+[Epoch 48] Train=4.3193 | Val=0.3177 | Dice=0.4308 | IoU=0.3835 | Acc=0.8739 | Sens=0.8775 | Spec=0.8740
+[Epoch 49] Train=4.4489 | Val=0.2608 | Dice=0.4185 | IoU=0.3769 | Acc=0.9015 | Sens=0.7853 | Spec=0.9550
+[Epoch 50] Train=4.2037 | Val=0.2849 | Dice=0.4301 | IoU=0.3849 | Acc=0.8887 | Sens=0.8539 | Spec=0.9059
+Finished training with 1 clicks.
+
+===== Training with 5 positive/negative clicks =====
+[Epoch 01] Train=13.8524 | Val=0.6957 | Dice=0.3491 | IoU=0.2888 | Acc=0.2975 | Sens=0.9996 | Spec=0.0123
+[Epoch 02] Train=13.8187 | Val=0.6962 | Dice=0.3537 | IoU=0.2937 | Acc=0.3284 | Sens=0.9952 | Spec=0.0576
+[Epoch 03] Train=13.6519 | Val=0.6859 | Dice=0.3593 | IoU=0.3008 | Acc=0.6349 | Sens=0.8986 | Spec=0.5290
+[Epoch 04] Train=12.7677 | Val=0.6378 | Dice=0.3547 | IoU=0.2994 | Acc=0.7319 | Sens=0.8049 | Spec=0.7054
+[Epoch 05] Train=9.7245 | Val=0.4858 | Dice=0.3398 | IoU=0.2853 | Acc=0.7799 | Sens=0.7283 | Spec=0.8052
+[Epoch 06] Train=8.4435 | Val=0.6069 | Dice=0.3491 | IoU=0.2961 | Acc=0.7607 | Sens=0.7902 | Spec=0.7525
+[Epoch 07] Train=8.4182 | Val=0.3811 | Dice=0.3091 | IoU=0.2637 | Acc=0.8557 | Sens=0.5845 | Spec=0.9678
+[Epoch 08] Train=8.1822 | Val=0.3796 | Dice=0.3292 | IoU=0.2815 | Acc=0.8525 | Sens=0.6603 | Spec=0.9327
+[Epoch 09] Train=7.3915 | Val=0.4106 | Dice=0.3476 | IoU=0.2980 | Acc=0.8171 | Sens=0.7601 | Spec=0.8433
+[Epoch 10] Train=6.6349 | Val=0.4169 | Dice=0.3503 | IoU=0.3004 | Acc=0.8141 | Sens=0.7708 | Spec=0.8347
+[Epoch 11] Train=6.2942 | Val=0.3771 | Dice=0.3496 | IoU=0.3012 | Acc=0.8340 | Sens=0.7571 | Spec=0.8677
+[Epoch 12] Train=6.1639 | Val=0.3259 | Dice=0.3425 | IoU=0.2981 | Acc=0.8683 | Sens=0.6990 | Spec=0.9380
+[Epoch 13] Train=6.2692 | Val=0.3174 | Dice=0.3354 | IoU=0.2934 | Acc=0.8755 | Sens=0.6663 | Spec=0.9607
+[Epoch 14] Train=6.2394 | Val=0.3145 | Dice=0.3538 | IoU=0.3098 | Acc=0.8725 | Sens=0.7396 | Spec=0.9270
+[Epoch 15] Train=5.7448 | Val=0.3046 | Dice=0.3571 | IoU=0.3137 | Acc=0.8770 | Sens=0.7443 | Spec=0.9310
+[Epoch 16] Train=5.3668 | Val=0.2950 | Dice=0.3645 | IoU=0.3216 | Acc=0.8810 | Sens=0.7646 | Spec=0.9279
+[Epoch 17] Train=5.2205 | Val=0.2866 | Dice=0.3713 | IoU=0.3285 | Acc=0.8851 | Sens=0.7773 | Spec=0.9280
+[Epoch 18] Train=4.9141 | Val=0.3384 | Dice=0.3821 | IoU=0.3347 | Acc=0.8621 | Sens=0.8460 | Spec=0.8684
+[Epoch 19] Train=5.0197 | Val=0.3337 | Dice=0.3853 | IoU=0.3377 | Acc=0.8643 | Sens=0.8524 | Spec=0.8689
+[Epoch 20] Train=4.8926 | Val=0.2803 | Dice=0.3897 | IoU=0.3454 | Acc=0.8896 | Sens=0.8299 | Spec=0.9128
+[Epoch 21] Train=5.1020 | Val=0.2517 | Dice=0.3756 | IoU=0.3364 | Acc=0.9031 | Sens=0.7582 | Spec=0.9601
+[Epoch 22] Train=5.3689 | Val=0.2482 | Dice=0.3827 | IoU=0.3430 | Acc=0.9051 | Sens=0.7807 | Spec=0.9537
+[Epoch 23] Train=4.3854 | Val=0.2555 | Dice=0.3944 | IoU=0.3519 | Acc=0.9004 | Sens=0.8263 | Spec=0.9293
+[Epoch 24] Train=3.9262 | Val=0.4041 | Dice=0.3959 | IoU=0.3459 | Acc=0.8426 | Sens=0.9088 | Spec=0.8159
+[Epoch 25] Train=5.2510 | Val=0.2978 | Dice=0.4003 | IoU=0.3535 | Acc=0.8852 | Sens=0.8730 | Spec=0.8892
+[Epoch 26] Train=5.1998 | Val=0.2417 | Dice=0.3901 | IoU=0.3497 | Acc=0.9087 | Sens=0.7926 | Spec=0.9544
+[Epoch 27] Train=4.5566 | Val=0.2384 | Dice=0.3920 | IoU=0.3512 | Acc=0.9085 | Sens=0.8034 | Spec=0.9502
+[Epoch 28] Train=4.6631 | Val=0.2427 | Dice=0.3915 | IoU=0.3495 | Acc=0.9061 | Sens=0.8001 | Spec=0.9486
+[Epoch 29] Train=4.6037 | Val=0.2586 | Dice=0.4035 | IoU=0.3584 | Acc=0.9011 | Sens=0.8548 | Spec=0.9196
+[Epoch 30] Train=4.1556 | Val=0.2760 | Dice=0.4066 | IoU=0.3605 | Acc=0.8945 | Sens=0.8823 | Spec=0.8989
+[Epoch 31] Train=3.4732 | Val=0.2687 | Dice=0.4050 | IoU=0.3594 | Acc=0.8985 | Sens=0.8752 | Spec=0.9077
+[Epoch 32] Train=4.0757 | Val=0.2303 | Dice=0.4013 | IoU=0.3599 | Acc=0.9128 | Sens=0.8252 | Spec=0.9481
+[Epoch 33] Train=4.5970 | Val=0.2330 | Dice=0.3799 | IoU=0.3425 | Acc=0.9114 | Sens=0.7463 | Spec=0.9772
+[Epoch 34] Train=4.7613 | Val=0.2250 | Dice=0.3977 | IoU=0.3575 | Acc=0.9143 | Sens=0.8064 | Spec=0.9574
+[Epoch 35] Train=4.5128 | Val=0.2420 | Dice=0.4098 | IoU=0.3660 | Acc=0.9091 | Sens=0.8668 | Spec=0.9258
+[Epoch 36] Train=5.0125 | Val=0.2538 | Dice=0.4116 | IoU=0.3667 | Acc=0.9052 | Sens=0.8793 | Spec=0.9155
+[Epoch 37] Train=4.4519 | Val=0.2295 | Dice=0.4074 | IoU=0.3647 | Acc=0.9126 | Sens=0.8443 | Spec=0.9403
+[Epoch 38] Train=3.8574 | Val=0.2342 | Dice=0.4103 | IoU=0.3664 | Acc=0.9091 | Sens=0.8651 | Spec=0.9269
+[Epoch 39] Train=4.3341 | Val=0.2171 | Dice=0.4060 | IoU=0.3650 | Acc=0.9166 | Sens=0.8292 | Spec=0.9520
+[Epoch 40] Train=3.6312 | Val=0.2202 | Dice=0.4097 | IoU=0.3677 | Acc=0.9156 | Sens=0.8510 | Spec=0.9420
+[Epoch 41] Train=4.1221 | Val=0.2213 | Dice=0.4116 | IoU=0.3693 | Acc=0.9154 | Sens=0.8585 | Spec=0.9388
+[Epoch 42] Train=3.5719 | Val=0.2529 | Dice=0.4150 | IoU=0.3699 | Acc=0.9055 | Sens=0.8886 | Spec=0.9129
+[Epoch 43] Train=3.9740 | Val=0.2621 | Dice=0.4157 | IoU=0.3703 | Acc=0.9030 | Sens=0.8940 | Spec=0.9070
+[Epoch 44] Train=4.0108 | Val=0.2152 | Dice=0.4024 | IoU=0.3628 | Acc=0.9175 | Sens=0.8021 | Spec=0.9645
+[Epoch 45] Train=3.8148 | Val=0.2129 | Dice=0.4072 | IoU=0.3667 | Acc=0.9180 | Sens=0.8194 | Spec=0.9582
+[Epoch 46] Train=3.9148 | Val=0.2127 | Dice=0.4124 | IoU=0.3704 | Acc=0.9177 | Sens=0.8428 | Spec=0.9488
+[Epoch 47] Train=3.5618 | Val=0.2206 | Dice=0.4173 | IoU=0.3736 | Acc=0.9140 | Sens=0.8699 | Spec=0.9328
+[Epoch 48] Train=3.8966 | Val=0.2483 | Dice=0.4176 | IoU=0.3723 | Acc=0.9043 | Sens=0.9016 | Spec=0.9056
+[Epoch 49] Train=3.5623 | Val=0.2169 | Dice=0.4161 | IoU=0.3727 | Acc=0.9152 | Sens=0.8672 | Spec=0.9356
+[Epoch 50] Train=3.3624 | Val=0.2119 | Dice=0.4141 | IoU=0.3713 | Acc=0.9172 | Sens=0.8611 | Spec=0.9412
+Finished training with 5 clicks.
+
+===== Training with 10 positive/negative clicks =====
+[Epoch 01] Train=13.8532 | Val=0.6884 | Dice=0.0000 | IoU=0.0000 | Acc=0.7056 | Sens=0.0000 | Spec=1.0000
+[Epoch 02] Train=13.8038 | Val=0.6935 | Dice=0.3716 | IoU=0.3070 | Acc=0.4540 | Sens=0.9723 | Spec=0.2384
+[Epoch 03] Train=13.6214 | Val=0.6978 | Dice=0.3693 | IoU=0.3046 | Acc=0.4506 | Sens=0.9786 | Spec=0.2309
+[Epoch 04] Train=12.7188 | Val=0.6696 | Dice=0.3784 | IoU=0.3177 | Acc=0.6264 | Sens=0.9337 | Spec=0.4998
+[Epoch 05] Train=9.7748 | Val=0.4832 | Dice=0.3714 | IoU=0.3181 | Acc=0.7826 | Sens=0.8041 | Spec=0.7758
+[Epoch 06] Train=8.2519 | Val=0.5632 | Dice=0.3745 | IoU=0.3214 | Acc=0.7743 | Sens=0.8316 | Spec=0.7526
+[Epoch 07] Train=8.0214 | Val=0.6117 | Dice=0.3767 | IoU=0.3224 | Acc=0.7573 | Sens=0.8664 | Spec=0.7139
+[Epoch 08] Train=7.4372 | Val=0.4628 | Dice=0.3748 | IoU=0.3236 | Acc=0.7966 | Sens=0.8300 | Spec=0.7848
+[Epoch 09] Train=7.0485 | Val=0.3814 | Dice=0.3695 | IoU=0.3211 | Acc=0.8311 | Sens=0.7910 | Spec=0.8500
+[Epoch 10] Train=7.1301 | Val=0.3395 | Dice=0.3655 | IoU=0.3200 | Acc=0.8601 | Sens=0.7596 | Spec=0.9045
+[Epoch 11] Train=6.4981 | Val=0.3392 | Dice=0.3741 | IoU=0.3278 | Acc=0.8582 | Sens=0.7919 | Spec=0.8882
+[Epoch 12] Train=6.2629 | Val=0.3378 | Dice=0.3807 | IoU=0.3338 | Acc=0.8588 | Sens=0.8142 | Spec=0.8800
+[Epoch 13] Train=5.8197 | Val=0.3144 | Dice=0.3828 | IoU=0.3374 | Acc=0.8729 | Sens=0.8073 | Spec=0.9029
+[Epoch 14] Train=5.4886 | Val=0.2999 | Dice=0.3847 | IoU=0.3405 | Acc=0.8814 | Sens=0.8021 | Spec=0.9171
+[Epoch 15] Train=5.3073 | Val=0.2814 | Dice=0.3845 | IoU=0.3428 | Acc=0.8917 | Sens=0.7839 | Spec=0.9394
+[Epoch 16] Train=5.4936 | Val=0.2895 | Dice=0.3929 | IoU=0.3481 | Acc=0.8852 | Sens=0.8258 | Spec=0.9128
+[Epoch 17] Train=5.3085 | Val=0.2696 | Dice=0.3921 | IoU=0.3497 | Acc=0.8953 | Sens=0.8043 | Spec=0.9360
+[Epoch 18] Train=5.1418 | Val=0.2692 | Dice=0.3985 | IoU=0.3546 | Acc=0.8942 | Sens=0.8234 | Spec=0.9265
+[Epoch 19] Train=4.8583 | Val=0.2977 | Dice=0.4104 | IoU=0.3626 | Acc=0.8801 | Sens=0.8765 | Spec=0.8842
+[Epoch 20] Train=4.8393 | Val=0.2586 | Dice=0.4055 | IoU=0.3619 | Acc=0.8996 | Sens=0.8346 | Spec=0.9294
+[Epoch 21] Train=4.7173 | Val=0.2554 | Dice=0.3882 | IoU=0.3488 | Acc=0.9043 | Sens=0.7658 | Spec=0.9650
+[Epoch 22] Train=4.8672 | Val=0.2492 | Dice=0.3877 | IoU=0.3486 | Acc=0.9051 | Sens=0.7633 | Spec=0.9671
+[Epoch 23] Train=4.3206 | Val=0.2516 | Dice=0.4084 | IoU=0.3648 | Acc=0.9019 | Sens=0.8391 | Spec=0.9309
+[Epoch 24] Train=4.4160 | Val=0.2481 | Dice=0.3902 | IoU=0.3511 | Acc=0.9065 | Sens=0.7670 | Spec=0.9675
+[Epoch 25] Train=4.8844 | Val=0.2393 | Dice=0.3997 | IoU=0.3593 | Acc=0.9083 | Sens=0.7917 | Spec=0.9598
+[Epoch 26] Train=4.6429 | Val=0.2378 | Dice=0.4112 | IoU=0.3689 | Acc=0.9078 | Sens=0.8349 | Spec=0.9410
+[Epoch 27] Train=4.3542 | Val=0.2361 | Dice=0.4061 | IoU=0.3649 | Acc=0.9093 | Sens=0.8094 | Spec=0.9538
+[Epoch 28] Train=4.2058 | Val=0.2348 | Dice=0.4142 | IoU=0.3720 | Acc=0.9091 | Sens=0.8362 | Spec=0.9424
+[Epoch 29] Train=4.3246 | Val=0.2325 | Dice=0.4155 | IoU=0.3733 | Acc=0.9102 | Sens=0.8380 | Spec=0.9431
+[Epoch 30] Train=4.1012 | Val=0.2512 | Dice=0.4224 | IoU=0.3776 | Acc=0.9035 | Sens=0.8749 | Spec=0.9182
+[Epoch 31] Train=4.1248 | Val=0.2287 | Dice=0.4102 | IoU=0.3699 | Acc=0.9140 | Sens=0.8118 | Spec=0.9595
+[Epoch 32] Train=3.8558 | Val=0.2281 | Dice=0.4125 | IoU=0.3721 | Acc=0.9145 | Sens=0.8199 | Spec=0.9568
+[Epoch 33] Train=4.4831 | Val=0.2340 | Dice=0.4000 | IoU=0.3610 | Acc=0.9123 | Sens=0.7798 | Spec=0.9705
+[Epoch 34] Train=4.4467 | Val=0.2212 | Dice=0.4139 | IoU=0.3737 | Acc=0.9153 | Sens=0.8243 | Spec=0.9561
+[Epoch 35] Train=3.9937 | Val=0.2220 | Dice=0.4192 | IoU=0.3779 | Acc=0.9146 | Sens=0.8448 | Spec=0.9465
+[Epoch 36] Train=3.8462 | Val=0.2331 | Dice=0.4266 | IoU=0.3834 | Acc=0.9107 | Sens=0.8764 | Spec=0.9277
+[Epoch 37] Train=3.8218 | Val=0.2312 | Dice=0.4291 | IoU=0.3860 | Acc=0.9117 | Sens=0.8789 | Spec=0.9280
+[Epoch 38] Train=3.7178 | Val=0.2279 | Dice=0.4313 | IoU=0.3883 | Acc=0.9133 | Sens=0.8823 | Spec=0.9288
+[Epoch 39] Train=3.6763 | Val=0.2214 | Dice=0.4314 | IoU=0.3893 | Acc=0.9159 | Sens=0.8770 | Spec=0.9347
+[Epoch 40] Train=3.6811 | Val=0.2189 | Dice=0.4294 | IoU=0.3876 | Acc=0.9172 | Sens=0.8695 | Spec=0.9396
+[Epoch 41] Train=3.9392 | Val=0.2147 | Dice=0.4138 | IoU=0.3747 | Acc=0.9186 | Sens=0.8031 | Spec=0.9697
+[Epoch 42] Train=4.0936 | Val=0.2122 | Dice=0.4168 | IoU=0.3779 | Acc=0.9198 | Sens=0.8128 | Spec=0.9672
+[Epoch 43] Train=4.1162 | Val=0.2057 | Dice=0.4236 | IoU=0.3849 | Acc=0.9222 | Sens=0.8337 | Spec=0.9618
+[Epoch 44] Train=3.8092 | Val=0.2168 | Dice=0.4108 | IoU=0.3732 | Acc=0.9196 | Sens=0.7974 | Spec=0.9733
+[Epoch 45] Train=4.1067 | Val=0.2054 | Dice=0.4310 | IoU=0.3911 | Acc=0.9219 | Sens=0.8616 | Spec=0.9497
+[Epoch 46] Train=3.5874 | Val=0.2281 | Dice=0.4367 | IoU=0.3930 | Acc=0.9129 | Sens=0.9029 | Spec=0.9196
+[Epoch 47] Train=3.4674 | Val=0.2233 | Dice=0.4373 | IoU=0.3947 | Acc=0.9158 | Sens=0.8981 | Spec=0.9257
+[Epoch 48] Train=3.4653 | Val=0.2362 | Dice=0.4399 | IoU=0.3952 | Acc=0.9108 | Sens=0.9150 | Spec=0.9115
+[Epoch 49] Train=3.4485 | Val=0.2095 | Dice=0.4415 | IoU=0.4002 | Acc=0.9205 | Sens=0.8960 | Spec=0.9332
+[Epoch 50] Train=3.2596 | Val=0.2006 | Dice=0.4394 | IoU=0.3994 | Acc=0.9241 | Sens=0.8841 | Spec=0.9433
+Finished training with 10 clicks.
+
+===== Training with 20 positive/negative clicks =====
+[Epoch 01] Train=13.8522 | Val=0.6939 | Dice=0.3593 | IoU=0.2991 | Acc=0.3774 | Sens=0.9920 | Spec=0.1276
+[Epoch 02] Train=13.8117 | Val=0.6959 | Dice=0.3554 | IoU=0.2941 | Acc=0.3309 | Sens=0.9970 | Spec=0.0600
+[Epoch 03] Train=13.6666 | Val=0.6922 | Dice=0.3675 | IoU=0.3084 | Acc=0.4599 | Sens=0.9896 | Spec=0.2461
+[Epoch 04] Train=12.8979 | Val=0.6401 | Dice=0.3839 | IoU=0.3311 | Acc=0.7220 | Sens=0.9133 | Spec=0.6481
+[Epoch 05] Train=10.2850 | Val=0.4522 | Dice=0.3701 | IoU=0.3212 | Acc=0.8182 | Sens=0.8006 | Spec=0.8292
+[Epoch 06] Train=7.9194 | Val=0.3718 | Dice=0.3404 | IoU=0.2941 | Acc=0.8532 | Sens=0.6882 | Spec=0.9245
+[Epoch 07] Train=7.5254 | Val=0.5342 | Dice=0.3748 | IoU=0.3254 | Acc=0.7809 | Sens=0.8683 | Spec=0.7491
+[Epoch 08] Train=7.9251 | Val=0.4098 | Dice=0.3724 | IoU=0.3254 | Acc=0.8264 | Sens=0.8275 | Spec=0.8298
+[Epoch 09] Train=7.2475 | Val=0.3716 | Dice=0.3683 | IoU=0.3232 | Acc=0.8460 | Sens=0.8008 | Spec=0.8683
+[Epoch 10] Train=6.8620 | Val=0.3497 | Dice=0.3659 | IoU=0.3218 | Acc=0.8573 | Sens=0.7865 | Spec=0.8900
+[Epoch 11] Train=6.6934 | Val=0.3734 | Dice=0.3737 | IoU=0.3282 | Acc=0.8408 | Sens=0.8308 | Spec=0.8486
+[Epoch 12] Train=6.1825 | Val=0.3562 | Dice=0.3732 | IoU=0.3284 | Acc=0.8506 | Sens=0.8255 | Spec=0.8645
+[Epoch 13] Train=6.1748 | Val=0.3515 | Dice=0.3757 | IoU=0.3313 | Acc=0.8548 | Sens=0.8316 | Spec=0.8680
+[Epoch 14] Train=5.8833 | Val=0.3104 | Dice=0.3689 | IoU=0.3272 | Acc=0.8750 | Sens=0.7882 | Spec=0.9139
+[Epoch 15] Train=5.7933 | Val=0.3021 | Dice=0.3705 | IoU=0.3293 | Acc=0.8785 | Sens=0.7896 | Spec=0.9181
+[Epoch 16] Train=5.4689 | Val=0.3300 | Dice=0.3814 | IoU=0.3371 | Acc=0.8623 | Sens=0.8444 | Spec=0.8730
+[Epoch 17] Train=5.3702 | Val=0.3350 | Dice=0.3848 | IoU=0.3401 | Acc=0.8591 | Sens=0.8571 | Spec=0.8633
+[Epoch 18] Train=5.3677 | Val=0.3309 | Dice=0.3867 | IoU=0.3417 | Acc=0.8603 | Sens=0.8634 | Spec=0.8623
+[Epoch 19] Train=5.1853 | Val=0.2910 | Dice=0.3843 | IoU=0.3416 | Acc=0.8798 | Sens=0.8367 | Spec=0.9003
+[Epoch 20] Train=5.3213 | Val=0.2689 | Dice=0.3808 | IoU=0.3404 | Acc=0.8923 | Sens=0.8081 | Spec=0.9293
+[Epoch 21] Train=4.8886 | Val=0.2955 | Dice=0.3911 | IoU=0.3471 | Acc=0.8773 | Sens=0.8590 | Spec=0.8876
+[Epoch 22] Train=4.8869 | Val=0.3008 | Dice=0.3951 | IoU=0.3507 | Acc=0.8753 | Sens=0.8698 | Spec=0.8803
+[Epoch 23] Train=4.7453 | Val=0.2758 | Dice=0.3948 | IoU=0.3518 | Acc=0.8870 | Sens=0.8555 | Spec=0.9024
+[Epoch 24] Train=4.7749 | Val=0.2692 | Dice=0.3977 | IoU=0.3550 | Acc=0.8904 | Sens=0.8568 | Spec=0.9065
+[Epoch 25] Train=4.5415 | Val=0.2492 | Dice=0.3957 | IoU=0.3552 | Acc=0.9013 | Sens=0.8346 | Spec=0.9305
+[Epoch 26] Train=4.5541 | Val=0.2420 | Dice=0.3937 | IoU=0.3546 | Acc=0.9066 | Sens=0.8220 | Spec=0.9430
+[Epoch 27] Train=4.4769 | Val=0.2332 | Dice=0.3953 | IoU=0.3558 | Acc=0.9102 | Sens=0.8242 | Spec=0.9470
+[Epoch 28] Train=4.7754 | Val=0.3460 | Dice=0.4067 | IoU=0.3591 | Acc=0.8600 | Sens=0.9241 | Spec=0.8360
+[Epoch 29] Train=4.1904 | Val=0.3597 | Dice=0.4068 | IoU=0.3587 | Acc=0.8537 | Sens=0.9309 | Spec=0.8245
+[Epoch 30] Train=4.4327 | Val=0.4271 | Dice=0.4048 | IoU=0.3550 | Acc=0.8285 | Sens=0.9481 | Spec=0.7824
+[Epoch 31] Train=4.8377 | Val=0.3634 | Dice=0.4077 | IoU=0.3592 | Acc=0.8536 | Sens=0.9362 | Spec=0.8220
+[Epoch 32] Train=4.5573 | Val=0.2728 | Dice=0.4108 | IoU=0.3664 | Acc=0.8890 | Sens=0.9028 | Spec=0.8852
+[Epoch 33] Train=4.6833 | Val=0.2945 | Dice=0.4121 | IoU=0.3662 | Acc=0.8796 | Sens=0.9171 | Spec=0.8662
+[Epoch 34] Train=4.2834 | Val=0.2234 | Dice=0.4056 | IoU=0.3670 | Acc=0.9152 | Sens=0.8477 | Spec=0.9439
+[Epoch 35] Train=3.9292 | Val=0.2438 | Dice=0.4137 | IoU=0.3715 | Acc=0.9039 | Sens=0.8898 | Spec=0.9111
+[Epoch 36] Train=3.8873 | Val=0.2193 | Dice=0.4076 | IoU=0.3691 | Acc=0.9165 | Sens=0.8511 | Spec=0.9444
+[Epoch 37] Train=3.9270 | Val=0.2291 | Dice=0.4136 | IoU=0.3728 | Acc=0.9103 | Sens=0.8791 | Spec=0.9244
+[Epoch 38] Train=3.8352 | Val=0.2319 | Dice=0.4152 | IoU=0.3739 | Acc=0.9089 | Sens=0.8863 | Spec=0.9194
+[Epoch 39] Train=4.0229 | Val=0.2161 | Dice=0.4107 | IoU=0.3721 | Acc=0.9174 | Sens=0.8598 | Spec=0.9420
+[Epoch 40] Train=3.9016 | Val=0.2386 | Dice=0.4166 | IoU=0.3743 | Acc=0.9049 | Sens=0.8970 | Spec=0.9095
+[Epoch 41] Train=3.8748 | Val=0.2139 | Dice=0.4128 | IoU=0.3741 | Acc=0.9180 | Sens=0.8631 | Spec=0.9415
+[Epoch 42] Train=3.8620 | Val=0.2313 | Dice=0.4177 | IoU=0.3761 | Acc=0.9083 | Sens=0.8937 | Spec=0.9155
+[Epoch 43] Train=3.4704 | Val=0.2139 | Dice=0.4128 | IoU=0.3743 | Acc=0.9182 | Sens=0.8627 | Spec=0.9418
+[Epoch 44] Train=3.5858 | Val=0.2207 | Dice=0.4171 | IoU=0.3769 | Acc=0.9140 | Sens=0.8829 | Spec=0.9278
+[Epoch 45] Train=3.7581 | Val=0.2160 | Dice=0.4167 | IoU=0.3772 | Acc=0.9162 | Sens=0.8780 | Spec=0.9328
+[Epoch 46] Train=3.6946 | Val=0.2310 | Dice=0.4187 | IoU=0.3767 | Acc=0.9071 | Sens=0.8994 | Spec=0.9115
+[Epoch 47] Train=3.5693 | Val=0.2113 | Dice=0.4160 | IoU=0.3770 | Acc=0.9184 | Sens=0.8745 | Spec=0.9372
+[Epoch 48] Train=3.5173 | Val=0.2193 | Dice=0.4184 | IoU=0.3779 | Acc=0.9132 | Sens=0.8900 | Spec=0.9237
+[Epoch 49] Train=3.6280 | Val=0.2404 | Dice=0.4200 | IoU=0.3770 | Acc=0.9024 | Sens=0.9112 | Spec=0.9001
+[Epoch 50] Train=3.7369 | Val=0.2079 | Dice=0.4175 | IoU=0.3788 | Acc=0.9192 | Sens=0.8762 | Spec=0.9377
+Finished training with 20 clicks.
+
+===== Training with 50 positive/negative clicks =====
+[Epoch 01] Train=13.8580 | Val=0.6889 | Dice=0.0000 | IoU=0.0000 | Acc=0.6730 | Sens=0.0000 | Spec=1.0000
+[Epoch 02] Train=13.8200 | Val=0.6898 | Dice=0.3897 | IoU=0.3277 | Acc=0.7279 | Sens=0.7901 | Spec=0.7041
+[Epoch 03] Train=13.7017 | Val=0.6803 | Dice=0.3971 | IoU=0.3377 | Acc=0.7621 | Sens=0.8010 | Spec=0.7516
+[Epoch 04] Train=13.1003 | Val=0.6314 | Dice=0.3932 | IoU=0.3344 | Acc=0.7625 | Sens=0.7998 | Spec=0.7530
+[Epoch 05] Train=10.5745 | Val=0.4520 | Dice=0.3631 | IoU=0.3120 | Acc=0.8122 | Sens=0.6819 | Spec=0.8845
+[Epoch 06] Train=7.7271 | Val=0.4578 | Dice=0.3703 | IoU=0.3186 | Acc=0.8120 | Sens=0.7053 | Spec=0.8729
+[Epoch 07] Train=7.8107 | Val=0.4479 | Dice=0.3305 | IoU=0.2845 | Acc=0.8329 | Sens=0.5900 | Spec=0.9591
+[Epoch 08] Train=7.6799 | Val=0.4098 | Dice=0.3481 | IoU=0.3019 | Acc=0.8376 | Sens=0.6404 | Spec=0.9423
+[Epoch 09] Train=6.5677 | Val=0.3958 | Dice=0.3617 | IoU=0.3150 | Acc=0.8399 | Sens=0.6800 | Spec=0.9271
+[Epoch 10] Train=6.6193 | Val=0.4030 | Dice=0.3467 | IoU=0.3024 | Acc=0.8453 | Sens=0.6306 | Spec=0.9587
+[Epoch 11] Train=6.2913 | Val=0.4133 | Dice=0.3424 | IoU=0.2987 | Acc=0.8461 | Sens=0.6167 | Spec=0.9668
+[Epoch 12] Train=6.1617 | Val=0.3811 | Dice=0.3750 | IoU=0.3287 | Acc=0.8488 | Sens=0.7152 | Spec=0.9238
+[Epoch 13] Train=5.6963 | Val=0.3750 | Dice=0.3886 | IoU=0.3411 | Acc=0.8488 | Sens=0.7561 | Spec=0.9044
+[Epoch 14] Train=5.4657 | Val=0.3786 | Dice=0.3989 | IoU=0.3503 | Acc=0.8473 | Sens=0.7866 | Spec=0.8876
+[Epoch 15] Train=5.5225 | Val=0.3892 | Dice=0.4056 | IoU=0.3555 | Acc=0.8399 | Sens=0.8106 | Spec=0.8653
+[Epoch 16] Train=5.2569 | Val=0.4007 | Dice=0.4141 | IoU=0.3625 | Acc=0.8365 | Sens=0.8343 | Spec=0.8488
+[Epoch 17] Train=5.4573 | Val=0.3645 | Dice=0.4126 | IoU=0.3630 | Acc=0.8531 | Sens=0.8122 | Spec=0.8844
+[Epoch 18] Train=4.9874 | Val=0.3543 | Dice=0.4141 | IoU=0.3651 | Acc=0.8587 | Sens=0.8113 | Spec=0.8930
+[Epoch 19] Train=4.8635 | Val=0.3652 | Dice=0.4198 | IoU=0.3693 | Acc=0.8554 | Sens=0.8288 | Spec=0.8794
+[Epoch 20] Train=4.9555 | Val=0.3278 | Dice=0.4004 | IoU=0.3568 | Acc=0.8769 | Sens=0.7411 | Spec=0.9535
+[Epoch 21] Train=4.4929 | Val=0.3233 | Dice=0.4164 | IoU=0.3700 | Acc=0.8755 | Sens=0.7906 | Spec=0.9276
+[Epoch 22] Train=4.6908 | Val=0.3289 | Dice=0.4036 | IoU=0.3597 | Acc=0.8799 | Sens=0.7405 | Spec=0.9580
+[Epoch 23] Train=4.4206 | Val=0.3635 | Dice=0.4355 | IoU=0.3832 | Acc=0.8592 | Sens=0.8600 | Spec=0.8691
+[Epoch 24] Train=4.5834 | Val=0.3205 | Dice=0.4305 | IoU=0.3819 | Acc=0.8766 | Sens=0.8231 | Spec=0.9133
+[Epoch 25] Train=4.2035 | Val=0.3058 | Dice=0.4208 | IoU=0.3755 | Acc=0.8857 | Sens=0.7782 | Spec=0.9482
+[Epoch 26] Train=4.1435 | Val=0.3055 | Dice=0.4317 | IoU=0.3852 | Acc=0.8857 | Sens=0.8082 | Spec=0.9336
+[Epoch 27] Train=4.1929 | Val=0.3134 | Dice=0.4418 | IoU=0.3924 | Acc=0.8807 | Sens=0.8421 | Spec=0.9094
+[Epoch 28] Train=4.2958 | Val=0.3304 | Dice=0.4466 | IoU=0.3952 | Acc=0.8744 | Sens=0.8641 | Spec=0.8891
+[Epoch 29] Train=4.2523 | Val=0.3026 | Dice=0.4232 | IoU=0.3784 | Acc=0.8889 | Sens=0.7696 | Spec=0.9570
+[Epoch 30] Train=4.2196 | Val=0.3108 | Dice=0.4182 | IoU=0.3736 | Acc=0.8876 | Sens=0.7583 | Spec=0.9605
+[Epoch 31] Train=3.9697 | Val=0.2911 | Dice=0.4340 | IoU=0.3887 | Acc=0.8916 | Sens=0.7931 | Spec=0.9495
+[Epoch 32] Train=3.8641 | Val=0.2988 | Dice=0.4480 | IoU=0.3997 | Acc=0.8866 | Sens=0.8469 | Spec=0.9155
+[Epoch 33] Train=4.0398 | Val=0.3078 | Dice=0.4508 | IoU=0.4004 | Acc=0.8842 | Sens=0.8616 | Spec=0.9043
+[Epoch 34] Train=3.6185 | Val=0.3003 | Dice=0.4281 | IoU=0.3841 | Acc=0.8932 | Sens=0.7623 | Spec=0.9665
+[Epoch 35] Train=3.8927 | Val=0.2797 | Dice=0.4464 | IoU=0.4007 | Acc=0.8953 | Sens=0.8194 | Spec=0.9420
+[Epoch 36] Train=3.5804 | Val=0.2903 | Dice=0.4352 | IoU=0.3914 | Acc=0.8964 | Sens=0.7812 | Spec=0.9618
+[Epoch 37] Train=3.6801 | Val=0.2953 | Dice=0.4311 | IoU=0.3880 | Acc=0.8962 | Sens=0.7676 | Spec=0.9683
+[Epoch 38] Train=3.4835 | Val=0.3013 | Dice=0.4587 | IoU=0.4077 | Acc=0.8863 | Sens=0.8818 | Spec=0.8964
+[Epoch 39] Train=3.7115 | Val=0.2714 | Dice=0.4579 | IoU=0.4104 | Acc=0.8971 | Sens=0.8513 | Spec=0.9282
+[Epoch 40] Train=3.5250 | Val=0.2725 | Dice=0.4461 | IoU=0.4022 | Acc=0.9004 | Sens=0.7970 | Spec=0.9601
+[Epoch 41] Train=3.8315 | Val=0.2916 | Dice=0.4382 | IoU=0.3945 | Acc=0.8977 | Sens=0.7732 | Spec=0.9677
+[Epoch 42] Train=3.9568 | Val=0.2789 | Dice=0.4517 | IoU=0.4063 | Acc=0.8975 | Sens=0.8222 | Spec=0.9438
+[Epoch 43] Train=3.8586 | Val=0.2781 | Dice=0.4438 | IoU=0.4001 | Acc=0.8983 | Sens=0.7983 | Spec=0.9570
+[Epoch 44] Train=3.7152 | Val=0.2886 | Dice=0.4387 | IoU=0.3958 | Acc=0.8980 | Sens=0.7806 | Spec=0.9650
+[Epoch 45] Train=3.6950 | Val=0.2894 | Dice=0.4369 | IoU=0.3938 | Acc=0.8981 | Sens=0.7740 | Spec=0.9683
+[Epoch 46] Train=3.5639 | Val=0.2765 | Dice=0.4633 | IoU=0.4148 | Acc=0.8954 | Sens=0.8726 | Spec=0.9150
+[Epoch 47] Train=3.4415 | Val=0.2703 | Dice=0.4524 | IoU=0.4081 | Acc=0.9005 | Sens=0.8211 | Spec=0.9487
+[Epoch 48] Train=3.5562 | Val=0.2673 | Dice=0.4539 | IoU=0.4093 | Acc=0.9006 | Sens=0.8246 | Spec=0.9470
+[Epoch 49] Train=3.3134 | Val=0.2635 | Dice=0.4623 | IoU=0.4154 | Acc=0.9006 | Sens=0.8548 | Spec=0.9313
+[Epoch 50] Train=3.2827 | Val=0.2620 | Dice=0.4589 | IoU=0.4133 | Acc=0.9017 | Sens=0.8368 | Spec=0.9423
+Finished training with 50 clicks.
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 26945312: <testjob> in cluster <dcc> Done
+
+Job <testjob> was submitted from host <hpclogin1> by user <s252731> in cluster <dcc> at Thu Nov 13 10:52:29 2025
+Job was executed on host(s) <4*n-62-18-13>, in queue <c02516>, as user <s252731> in cluster <dcc> at Thu Nov 13 10:52:30 2025
+</zhome/1b/0/222796> was used as the home directory.
+</zhome/1b/0/222796/02516-image-segmentation> was used as the working directory.
+Started at Thu Nov 13 10:52:30 2025
+Terminated at Thu Nov 13 11:00:15 2025
+Results reported at Thu Nov 13 11:00:15 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+### ------------- specify queue name ----------------
+#BSUB -q c02516
+### ------------- specify gpu request----------------
+#BSUB -gpu "num=1:mode=exclusive_process"
+### ------------- specify job name ----------------
+#BSUB -J testjob
+### ------------- specify number of cores ----------------
+#BSUB -n 4
+#BSUB -R "span[hosts=1]"
+
+#BSUB -R "rusage[mem=20GB]"
+
+### ------------- specify wall-clock time (max allowed is 12:00)---------------- 
+#BSUB -W 02:00       
+# Create folder
+mkdir -p result
+
+#BSUB -o result/OUTPUT_FILE%J.out
+#BSUB -e result/OUTPUT_FILE%J.err
+
+source venv_1/bin/activate
+python weak_experiment.py
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   352.68 sec.
+    Max Memory :                                 944 MB
+    Average Memory :                             766.50 MB
+    Total Requested Memory :                     81920.00 MB
+    Delta Memory :                               80976.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                8
+    Run time :                                   528 sec.
+    Turnaround time :                            466 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <result/OUTPUT_FILE26945312.err> for stderr output of this job.
+
