@@ -1,46 +1,97 @@
-# this script should contain the five evaluation metrics as a function
-# dice score
-# intersection over union
-# accuracy
-# sensitivity
-# specificity
+import torch
 
-# and an additional eval function that includes all the individual evaluation metrics
 def compute_dice(pred_mask, gt_mask) -> float:
     """
-    Computes the dice score of the predicted and ground true mask. 
-
-    Parameters:
-    - pred_mask:        Batch of predicted masks (3D tensor).
-    - gt_mask:          Batch of ground truth masks (3D tensor).
-
-    Returns: 
-    -  avg_dice_score:  The computed dice score (average across masks in batch).
+    Computes the Dice score between predicted and ground truth masks.
     """
-    # ensure channel dimension is removed
-    if pred_mask.dim() == 4:
-        pred_mask = pred_mask.squeeze(1)
-    if gt_mask.dim() == 4:
-        gt_mask = gt_mask.squeeze(1)
+    # Apply threshold (0.5) to predicted mask
+    pred_mask = (torch.sigmoid(pred_mask) > 0.5).float()  # Ensure binary
+    gt_mask = (gt_mask > 0.5).float()  # Ensure ground truth is binary
 
-    # make boolean
+    # Convert masks to boolean for bitwise operations
     pred_mask = pred_mask.bool()
     gt_mask = gt_mask.bool()
-    
-    # computing intersection (pixels where both masks are 1)
-    intersection = (pred_mask & gt_mask).sum(dim=(1,2))
 
-    # computing the sizes of the masks (pixels with value 1)
-    preds_sizes = pred_mask.sum(dim=(1,2))
-    target_sizes = gt_mask.sum(dim=(1,2))
+    intersection = (pred_mask & gt_mask).sum(dim=(1, 2))
+    total_size = pred_mask.sum(dim=(1, 2)) + gt_mask.sum(dim=(1, 2))
+    dice_scores = 2 * intersection / total_size.clamp(min=1)
+    return dice_scores.mean().item()
 
-    # adding the mask sizes (|A|+|B|)
-    total_size = preds_sizes + target_sizes
 
-    # computing the dice score per mask in the batch
-    dice_scores = 2 * intersection / total_size
+def iou_score(pred_mask, gt_mask) -> float:
+    """
+    Intersection over Union (IoU) score.
+    """
+    # Apply threshold (0.5) to predicted mask
+    pred_mask = (torch.sigmoid(pred_mask) > 0.5).float()
+    gt_mask = (gt_mask > 0.5).float()
 
-    # average dice score across the batch
-    avg_dice_score = dice_scores.mean().item()
+    # Convert masks to boolean for bitwise operations
+    pred_mask = pred_mask.bool()
+    gt_mask = gt_mask.bool()
 
-    return avg_dice_score
+    intersection = (pred_mask & gt_mask).sum(dim=(1, 2))
+    union = (pred_mask | gt_mask).sum(dim=(1, 2))
+    iou = intersection / union.clamp(min=1)
+    return iou.mean().item()
+
+
+def accuracy_score(pred_mask, gt_mask) -> float:
+    """
+    Pixel-wise accuracy between prediction and ground truth.
+    """
+    pred_mask = (torch.sigmoid(pred_mask) > 0.5).float()  # Threshold the predictions
+    gt_mask = (gt_mask > 0.5).float()
+
+    # Convert to boolean for accurate comparison
+    pred_mask = pred_mask.bool()
+    gt_mask = gt_mask.bool()
+
+    correct = (pred_mask == gt_mask).float().sum()
+    total = torch.numel(pred_mask)
+    return (correct / total).item()
+
+
+def sensitivity_score(pred_mask, gt_mask) -> float:
+    """
+    Sensitivity (Recall): TP / (TP + FN)
+    """
+    pred_mask = (torch.sigmoid(pred_mask) > 0.5).float()
+    gt_mask = (gt_mask > 0.5).float()
+
+    # Convert to boolean for accurate comparison
+    pred_mask = pred_mask.bool()
+    gt_mask = gt_mask.bool()
+
+    tp = (pred_mask & gt_mask).sum().float()
+    fn = (~pred_mask & gt_mask).sum().float()
+    return (tp / (tp + fn).clamp(min=1)).item()
+
+
+def specificity_score(pred_mask, gt_mask) -> float:
+    """
+    Specificity: TN / (TN + FP)
+    """
+    pred_mask = (torch.sigmoid(pred_mask) > 0.5).float()
+    gt_mask = (gt_mask > 0.5).float()
+
+    # Convert to boolean for accurate comparison
+    pred_mask = pred_mask.bool()
+    gt_mask = gt_mask.bool()
+
+    tn = (~pred_mask & ~gt_mask).sum().float()
+    fp = (pred_mask & ~gt_mask).sum().float()
+    return (tn / (tn + fp).clamp(min=1)).item()
+
+
+def evaluate_all(pred_mask, gt_mask) -> dict:
+    """
+    Computes all metrics and returns a dictionary.
+    """
+    return {
+        "dice": compute_dice(pred_mask, gt_mask),
+        "iou": iou_score(pred_mask, gt_mask),
+        "accuracy": accuracy_score(pred_mask, gt_mask),
+        "sensitivity": sensitivity_score(pred_mask, gt_mask),
+        "specificity": specificity_score(pred_mask, gt_mask),
+    }
