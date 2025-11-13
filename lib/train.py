@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 import numpy as np
 import torch
 import torch.nn as nn
@@ -46,12 +48,7 @@ def train_model(model,
     Returns:
     - out_dict:         Dictionary containing the loss and dice score per epoch on the training and validation set, respectively.
     """
-    out_dict = {"train_loss": [],
-                "train_dice": [],
-                "val_loss": [],
-                "val_dice": [],
-                "n_epochs": 0,
-                }
+    out_dict = defaultdict(list)
     
     # converting the weight w to a pytorch tensor for cross_entropy_pw
     w = torch.tensor([w]).to(device)
@@ -65,11 +62,13 @@ def train_model(model,
     prev_val_loss = 1e10
 
     for epoch in range(n_epochs):
+        epoch_results = defaultdict(list)
         model.train()
-        train_losses = []
-        train_dice_scores = []
-        val_losses = []
-        val_dice_scores = []
+        # train_losses = []
+        # train_dice_scores = []
+        # train_iou_scores = []
+        # val_losses = []
+        # val_dice_scores = []
 
         for image, mask in train_loader:
             image, mask = image.to(device), mask.to(device)
@@ -84,16 +83,20 @@ def train_model(model,
             # updating model weights by performing a backward step
             train_loss.backward()
             optimizer.step()
-            train_losses.append(train_loss.item())
+            epoch_results["train_losses"].append(train_loss.item())
 
             # converting the predicted and ground truth masks to binary masks
             probs = torch.sigmoid(output)
             predicted = (probs >= 0.5).bool()
             mask = (mask > 0.5).bool()
 
-            # computing the dice score on the training data
-            train_dice = compute_dice(predicted, mask)
-            train_dice_scores.append(train_dice)
+            # computing evaluation metrics on the training data
+            eval_metric_dict_train = evaluate_all(pred_mask=predicted, gt_mask=mask)
+            epoch_results["train_dice_scores"].append(eval_metric_dict_train["dice"])
+            epoch_results["train_iou_scores"].append(eval_metric_dict_train["iou"])
+            epoch_results["train_acc_scores"].append(eval_metric_dict_train["accuracy"])
+            epoch_results["train_sens_scores"].append(eval_metric_dict_train["sensitivity"])
+            epoch_results["train_spec_scores"].append(eval_metric_dict_train["specificity"])
 
         model.eval()
         with torch.no_grad():
@@ -101,34 +104,57 @@ def train_model(model,
                 image, mask = image.to(device), mask.to(device)
                 output = model(image)
                 val_loss = criterion(output, mask).cpu().item()
-                val_losses.append(val_loss)
+                epoch_results["val_losses"].append(val_loss)
                 probs = torch.sigmoid(output)
                 predicted = (probs >= 0.5).bool()
                 mask = (mask > 0.5).bool()
-                val_dice = compute_dice(predicted, mask)
-                val_dice_scores.append(val_dice)
+                eval_metric_dict_val = evaluate_all(pred_mask=predicted, gt_mask=mask)
+                epoch_results["val_dice_scores"].append(eval_metric_dict_val["dice"])
+                epoch_results["val_iou_scores"].append(eval_metric_dict_val["iou"])
+                epoch_results["val_acc_scores"].append(eval_metric_dict_val["accuracy"])
+                epoch_results["val_sens_scores"].append(eval_metric_dict_val["sensitivity"])
+                epoch_results["val_spec_scores"].append(eval_metric_dict_val["specificity"])
 
-        avg_val_loss = np.mean(val_losses)
+        avg_val_loss = np.mean(epoch_results["val_losses"])
         scheduler.step(avg_val_loss)
 
-        # computing loss and dice scores for epoch
-        avg_train_loss = np.mean(train_losses)
-        avg_train_dice = np.mean(train_dice_scores)
-        avg_val_dice = np.mean(val_dice_scores)
+        # computing average loss and metric on the train set for epoch
+        avg_train_loss = np.mean(epoch_results["train_losses"])
+        avg_train_dice = np.mean(epoch_results["train_dice_scores"])
+        avg_train_iou = np.mean(epoch_results["train_iou_scores"])
+        avg_train_acc = np.mean(epoch_results["train_acc_scores"])
+        avg_train_sens = np.mean(epoch_results["train_sens_scores"])
+        avg_train_spec = np.mean(epoch_results["train_spec_scores"])
+
+        # computing average loss and metric on the train set for epoch
+        avg_val_dice = np.mean(epoch_results["val_dice_scores"])
+        avg_val_iou = np.mean(epoch_results["val_iou_scores"])
+        avg_val_acc = np.mean(epoch_results["val_acc_scores"])
+        avg_val_sens = np.mean(epoch_results["val_sens_scores"])
+        avg_val_spec = np.mean(epoch_results["val_spec_scores"])
 
         # appending to lists in out_dict
         out_dict['train_loss'].append(avg_train_loss)
         out_dict['train_dice'].append(avg_train_dice)
+        out_dict['train_iou'].append(avg_train_iou)
+        out_dict['train_acc'].append(avg_train_acc)
+        out_dict['train_sens'].append(avg_train_sens)
+        out_dict['train_spec'].append(avg_train_spec)
         out_dict['val_loss'].append(avg_val_loss)
         out_dict['val_dice'].append(avg_val_dice)
+        out_dict['val_iou'].append(avg_val_iou)
+        out_dict['val_acc'].append(avg_val_acc)
+        out_dict['val_sens'].append(avg_val_sens)
+        out_dict['val_spec'].append(avg_val_spec)
 
         # printing out the epoch results
         print(f"Epoch {epoch + 1} results:\n",
-              f"Train loss: {avg_train_loss:.4f}\t Val loss: {avg_val_loss:.4f}\n",
-              f"Train dice score: {avg_train_dice:.4f}\t Val dice score: {avg_val_dice:.4f}\n")
+              f"Results on train:\t loss: {avg_train_loss:.4f}\t dice: {avg_train_dice:.4f}\t iou: {avg_train_iou:.4f}\t acc: {avg_train_acc:.4f}\t sens: {avg_train_iou:.4f}\t spec: {avg_train_acc:.4f}\n",
+              f"Results on val:\t loss: {avg_val_loss:.4f}\t dice: {avg_val_dice:.4f}\t iou: {avg_val_iou:.4f}\t acc: {avg_val_acc:.4f}\t sens: {avg_val_iou:.4f}\t spec: {avg_val_acc:.4f}\n",
+              )
         
         # increment the number of epochs 
-        out_dict['n_epochs'] += 1
+        out_dict['n_epochs'].append(1)
 
         # check if early stopping should be applied
         if epoch + 1 > patience:
@@ -136,11 +162,13 @@ def train_model(model,
 
             if val_loss_diff < 0:
                 print(f"Current validation loss ({avg_val_loss}) is larger than for the previous epoch ({prev_val_loss})!")
+                print(f"Trained for {np.sum(out_dict['n_epochs'])} epochs.")
                 print("Early stopping applies!")
                 break
 
             elif val_loss_diff < tol:
                 print(f"Validation loss only improved by {val_loss_diff} which is lower than the tolerance of {tol}!")
+                print(f"Trained for {np.sum(out_dict['n_epochs'])} epochs.")
                 print("Early stopping applies!")
                 break
         
