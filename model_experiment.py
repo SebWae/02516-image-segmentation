@@ -15,9 +15,10 @@ batch_size = 4
 dataset_name = "DRIVE"
 factor = 0.3
 gamma = 2.0
+w = 2
 img_size = 256
 k_folds = 8
-loss_func = "cross_entropy"
+loss_func = "cross_entropy_pw"
 lr = 1e-4
 model_type = "EncDec"
 patience_scheduler = 5
@@ -37,6 +38,7 @@ hyperparam_vals = {"batch_size": batch_size,
                    "dataset": dataset_name,
                    "factor": factor,
                    "gamma": gamma,
+                   "w": w,
                    "img_size": img_size,
                    "k_folds": k_folds, 
                    "loss_func": loss_func,
@@ -60,9 +62,8 @@ dataset_dict = {"DRIVE": DriveDataset,
 dataset = dataset_dict[dataset_name](transform=transform)
 
 # dictionary to find model
-model_dict = {
-            "EncDec": EncDec,
-            "UNet": UNet,
+model_dict = {"EncDec": EncDec,
+              "UNet": UNet,
               }
 
 # randomly divide the dataset into a train and test set
