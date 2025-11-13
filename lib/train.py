@@ -2,7 +2,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-from lib.eval_metrics import compute_dice
+from lib.eval_metrics import evaluate_all
 from lib.losses import FocalLoss
 
 # this script should include a train function taking one of the models as input
