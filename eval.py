@@ -98,7 +98,7 @@ scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
 train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
-# train and validate model on fold
+# dictionary to contain results during training
 out_dict = defaultdict(list)
     
 # converting the weight w to a pytorch tensor for cross_entropy_pw
@@ -166,14 +166,6 @@ for epoch in range(n_epochs):
           f"Results on train:\t loss: {avg_train_loss:.4f}\t dice: {avg_train_dice:.4f}\t iou: {avg_train_iou:.4f}\t acc: {avg_train_acc:.4f}\t sens: {avg_train_iou:.4f}\t spec: {avg_train_acc:.4f}\n",
           )
 
-# save model
-# print(f"Saving model as '{best_model_name}.pt'")
-# torch.save(model.state_dict(), f'{best_model_name}.pt')
-
-# # loading the saved model
-# model.load_state_dict(torch.load('best_model.pt'))
-# model.to(device)
-
 # evaluate performance on test set
 eval_results = defaultdict(list)
 
@@ -197,21 +189,21 @@ for image, mask in test_loader:
     predicted = (probs >= 0.5).bool()
     mask = (mask > 0.5).bool()
 
-    # computing evaluation metrics on the training data
-    eval_metric_dict_train = evaluate_all(pred_mask=predicted, gt_mask=mask)
-    eval_results["test_dice_scores"].append(eval_metric_dict_train["dice"])
-    eval_results["test_iou_scores"].append(eval_metric_dict_train["iou"])
-    eval_results["test_acc_scores"].append(eval_metric_dict_train["accuracy"])
-    eval_results["test_sens_scores"].append(eval_metric_dict_train["sensitivity"])
-    eval_results["test_spec_scores"].append(eval_metric_dict_train["specificity"])
+    # computing evaluation metrics on the test data
+    eval_metric_dict_test = evaluate_all(pred_mask=predicted, gt_mask=mask)
+    eval_results["test_dice_scores"].append(eval_metric_dict_test["dice"])
+    eval_results["test_iou_scores"].append(eval_metric_dict_test["iou"])
+    eval_results["test_acc_scores"].append(eval_metric_dict_test["accuracy"])
+    eval_results["test_sens_scores"].append(eval_metric_dict_test["sensitivity"])
+    eval_results["test_spec_scores"].append(eval_metric_dict_test["specificity"])
 
-# computing average loss and metric on the train set for epoch
-avg_test_loss = np.mean(epoch_results["train_losses"])
-avg_test_dice = np.mean(epoch_results["test_dice_scores"])
-avg_test_iou = np.mean(epoch_results["test_iou_scores"])
-avg_test_acc = np.mean(epoch_results["test_acc_scores"])
-avg_test_sens = np.mean(epoch_results["test_sens_scores"])
-avg_test_spec = np.mean(epoch_results["test_spec_scores"])
+# computing average loss and metric on the test set across batches
+avg_test_loss = np.mean(eval_results["test_losses"])
+avg_test_dice = np.mean(eval_results["test_dice_scores"])
+avg_test_iou = np.mean(eval_results["test_iou_scores"])
+avg_test_acc = np.mean(eval_results["test_acc_scores"])
+avg_test_sens = np.mean(eval_results["test_sens_scores"])
+avg_test_spec = np.mean(eval_results["test_spec_scores"])
 
 # printing out the test results
 print(f"Results on test:\t loss: {avg_test_loss:.4f}\t dice: {avg_test_dice:.4f}\t iou: {avg_test_iou:.4f}\t acc: {avg_test_acc:.4f}\t sens: {avg_test_sens:.4f}\t spec: {avg_test_spec:.4f}\n")
