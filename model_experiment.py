@@ -131,6 +131,7 @@ for fold, (train_idx, val_idx) in enumerate(kfold.split(train_dataset)):
     val_acc = out_dict['val_acc'][-2]
     val_sens = out_dict['val_sens'][-2]
     val_spec = out_dict['val_spec'][-2]
+    n_epochs = np.sum(out_dict['n_epochs'])
 
     # appending performance metrics after final epoch to fold_results 
     for metric in metric_names:

@@ -108,4 +108,5 @@ metric_names = ["train_loss",
                 "val_acc",
                 "val_sens",
                 "val_spec",
+                "n_epochs",
                 ]
