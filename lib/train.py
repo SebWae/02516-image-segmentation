@@ -64,11 +64,6 @@ def train_model(model,
     for epoch in range(n_epochs):
         epoch_results = defaultdict(list)
         model.train()
-        # train_losses = []
-        # train_dice_scores = []
-        # train_iou_scores = []
-        # val_losses = []
-        # val_dice_scores = []
 
         for image, mask in train_loader:
             image, mask = image.to(device), mask.to(device)
