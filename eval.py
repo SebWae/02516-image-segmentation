@@ -15,7 +15,7 @@ from lib.model import EncDec, UNet
 
 # hyperparameters
 batch_size = 4
-dataset_name = "DRIVE"
+dataset_name = "PH2"
 factor = 0.3
 gamma = 2.0
 w = 2
@@ -23,14 +23,13 @@ img_size = 256
 k_folds = 8
 loss_func = "cross_entropy_pw"
 lr = 1e-4
-model_type = "EncDec"
-n_epochs = 25   # use number of epochs before early stopping was triggered during hyperparameter tuning
+model_type = "UNet"
+n_epochs = 22   # use number of epochs before early stopping was triggered during hyperparameter tuning
 patience_scheduler = 5
 patience_train = 20
 seed = 42
 train_prop = 0.8
 weight_decay = 1e-5
-best_model_name = "best_model"
 
 # data augmentation
 transform = T.Compose([
@@ -55,7 +54,6 @@ hyperparam_vals = {"batch_size": batch_size,
                    "seed": seed, 
                    "train_prop": train_prop, 
                    "weight_decay": weight_decay,
-                   "best_model_name": best_model_name,
                    }
 
 # printing hyperparameter values
