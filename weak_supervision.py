@@ -3,9 +3,9 @@ import torch
 from torch.utils.data import DataLoader, random_split
 from torchvision import transforms as T
 
-from lib.dataset.PH2WeakDataset import PH2WeakDataset
-from lib.model.EncDecModel import EncDec
-# from lib.model.UNetModel import UNet   # ← you can switch model here
+from lib.dataset import PH2WeakDataset
+from lib.model import EncDec
+# from lib.model import UNet   # ← you can switch model here
 from lib.train_weak import train_model_weak
 
 # ---- Setup ----
