@@ -32,43 +32,4 @@ class FocalLoss(nn.Module):
         avg_focal_loss = focal_loss.mean()
         
         return avg_focal_loss
- 
 
-# pixel-weighted cross entropy 
-class PixelWeightedCrossEntropyLoss(nn.Module):
-    def __init__(self):
-        super(PixelWeightedCrossEntropyLoss, self).__init__()
-
-    def forward(self, inputs, targets, weights):
-        """
-        Args:
-            inputs: logits tensor of shape (N, C, H, W)
-            targets: ground truth tensor of shape (N, H, W)
-            weights: per-pixel weights tensor of shape (N, H, W)
-        """
-        log_prob = F.log_softmax(inputs, dim=1)
-        loss = F.nll_loss(log_prob, targets, reduction='none')
-        weighted_loss = (loss * weights).mean()
-        return weighted_loss
-
-
-def compute_class_weights(targets):
-    """
-    Computes per-pixel weights based on inverse class frequency.
-    Args:
-        targets: tensor of shape (N, H, W)
-    Returns:
-        weights: tensor of shape (N, H, W)
-    """
-    # frequency of each class
-    num_fg = (targets == 1).sum().float()
-    num_bg = (targets == 0).sum().float()
-    total = num_fg + num_bg
-
-    # avoiding division by zero
-    w_fg = total / (2 * num_fg + 1e-8)
-    w_bg = total / (2 * num_bg + 1e-8)
-
-    # assigning weights
-    weights = torch.where(targets == 1, w_fg, w_bg)
-    return weights
