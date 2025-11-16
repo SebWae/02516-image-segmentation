@@ -1,0 +1,150 @@
+batch_size: 4
+dataset: PH2
+factor: 0.3
+gamma: 2.0
+w: 2
+img_size: 256
+k_folds: 8
+loss_func: cross_entropy
+lr: 0.0001
+model_type: EncDec
+n_epochs: 22
+patience_scheduler: 5
+patience_train: 20
+seed: 42
+train_prop: 0.8
+weight_decay: 1e-05
+best_model_name: best_model
+Epoch 1 results:
+ Results on train:	 loss: 0.4656	 dice: 0.7713	 iou: 0.7207	 acc: 0.8253	 sens: 0.7207	 spec: 0.8253
+
+Epoch 2 results:
+ Results on train:	 loss: 0.3233	 dice: 0.8514	 iou: 0.8125	 acc: 0.8929	 sens: 0.8125	 spec: 0.8929
+
+Epoch 3 results:
+ Results on train:	 loss: 0.2778	 dice: 0.8592	 iou: 0.8216	 acc: 0.8972	 sens: 0.8216	 spec: 0.8972
+
+Epoch 4 results:
+ Results on train:	 loss: 0.2500	 dice: 0.8602	 iou: 0.8254	 acc: 0.9044	 sens: 0.8254	 spec: 0.9044
+
+Epoch 5 results:
+ Results on train:	 loss: 0.2441	 dice: 0.8629	 iou: 0.8283	 acc: 0.9042	 sens: 0.8283	 spec: 0.9042
+
+Epoch 6 results:
+ Results on train:	 loss: 0.2295	 dice: 0.8643	 iou: 0.8288	 acc: 0.9068	 sens: 0.8288	 spec: 0.9068
+
+Epoch 7 results:
+ Results on train:	 loss: 0.2240	 dice: 0.8677	 iou: 0.8333	 acc: 0.9094	 sens: 0.8333	 spec: 0.9094
+
+Epoch 8 results:
+ Results on train:	 loss: 0.2173	 dice: 0.8705	 iou: 0.8371	 acc: 0.9122	 sens: 0.8371	 spec: 0.9122
+
+Epoch 9 results:
+ Results on train:	 loss: 0.2010	 dice: 0.8733	 iou: 0.8414	 acc: 0.9215	 sens: 0.8414	 spec: 0.9215
+
+Epoch 10 results:
+ Results on train:	 loss: 0.2151	 dice: 0.8680	 iou: 0.8343	 acc: 0.9113	 sens: 0.8343	 spec: 0.9113
+
+Epoch 11 results:
+ Results on train:	 loss: 0.2002	 dice: 0.8774	 iou: 0.8476	 acc: 0.9254	 sens: 0.8476	 spec: 0.9254
+
+Epoch 12 results:
+ Results on train:	 loss: 0.1939	 dice: 0.8729	 iou: 0.8426	 acc: 0.9231	 sens: 0.8426	 spec: 0.9231
+
+Epoch 13 results:
+ Results on train:	 loss: 0.2075	 dice: 0.8714	 iou: 0.8397	 acc: 0.9127	 sens: 0.8397	 spec: 0.9127
+
+Epoch 14 results:
+ Results on train:	 loss: 0.1869	 dice: 0.8757	 iou: 0.8442	 acc: 0.9249	 sens: 0.8442	 spec: 0.9249
+
+Epoch 15 results:
+ Results on train:	 loss: 0.1799	 dice: 0.8795	 iou: 0.8500	 acc: 0.9268	 sens: 0.8500	 spec: 0.9268
+
+Epoch 16 results:
+ Results on train:	 loss: 0.1967	 dice: 0.8737	 iou: 0.8413	 acc: 0.9179	 sens: 0.8413	 spec: 0.9179
+
+Epoch 17 results:
+ Results on train:	 loss: 0.1706	 dice: 0.8846	 iou: 0.8578	 acc: 0.9333	 sens: 0.8578	 spec: 0.9333
+
+Epoch 18 results:
+ Results on train:	 loss: 0.1855	 dice: 0.8767	 iou: 0.8471	 acc: 0.9268	 sens: 0.8471	 spec: 0.9268
+
+Epoch 19 results:
+ Results on train:	 loss: 0.1732	 dice: 0.8812	 iou: 0.8512	 acc: 0.9307	 sens: 0.8512	 spec: 0.9307
+
+Epoch 20 results:
+ Results on train:	 loss: 0.1744	 dice: 0.8813	 iou: 0.8525	 acc: 0.9300	 sens: 0.8525	 spec: 0.9300
+
+Epoch 21 results:
+ Results on train:	 loss: 0.1886	 dice: 0.8798	 iou: 0.8497	 acc: 0.9251	 sens: 0.8497	 spec: 0.9251
+
+Epoch 22 results:
+ Results on train:	 loss: 0.1685	 dice: 0.8816	 iou: 0.8529	 acc: 0.9322	 sens: 0.8529	 spec: 0.9322
+
+Results on test:	 loss: 0.2323	 dice: 0.8651	 iou: 0.8280	 acc: 0.8882	 sens: 0.9373	 spec: 0.5980
+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 27035430: <UNet_BCE_loss> in cluster <dcc> Done
+
+Job <UNet_BCE_loss> was submitted from host <hpclogin1> by user <s214397> in cluster <dcc> at Sat Nov 15 14:16:57 2025
+Job was executed on host(s) <4*n-62-18-13>, in queue <c02516>, as user <s214397> in cluster <dcc> at Sat Nov 15 14:16:58 2025
+</zhome/86/c/167853> was used as the home directory.
+</zhome/86/c/167853/02516-image-segmentation> was used as the working directory.
+Started at Sat Nov 15 14:16:58 2025
+Terminated at Sat Nov 15 14:17:44 2025
+Results reported at Sat Nov 15 14:17:44 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+### ------------- specify queue name ----------------
+#BSUB -q c02516
+### ------------- specify gpu request----------------
+#BSUB -gpu "num=1:mode=exclusive_process"
+### ------------- specify job name ----------------
+#BSUB -J UNet_BCE_loss
+### ------------- specify number of cores ----------------
+#BSUB -n 4
+#BSUB -R "span[hosts=1]"
+
+#BSUB -R "rusage[mem=20GB]"
+
+### ------------- specify wall-clock time (max allowed is 12:00)---------------- 
+#BSUB -W 08:00
+
+#BSUB -o OUTPUT_FILE%J.out
+#BSUB -e OUTPUT_FILE%J.err
+
+source venv_proj3/bin/activate
+#python model_experiment.py
+python eval.py
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   40.83 sec.
+    Max Memory :                                 940 MB
+    Average Memory :                             938.33 MB
+    Total Requested Memory :                     81920.00 MB
+    Delta Memory :                               80980.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                8
+    Run time :                                   121 sec.
+    Turnaround time :                            47 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <OUTPUT_FILE27035430.err> for stderr output of this job.
+

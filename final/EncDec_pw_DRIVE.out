@@ -1,0 +1,867 @@
+batch_size: 4
+dataset: DRIVE
+factor: 0.3
+gamma: 2.0
+w: 2
+img_size: 256
+k_folds: 8
+loss_func: cross_entropy_pw
+lr: 0.0001
+model_type: EncDec
+patience_scheduler: 5
+patience_train: 20
+seed: 42
+train_prop: 0.8
+weight_decay: 1e-05
+
+--- Fold 1/8 ---
+Epoch 1 results:
+ Results on train:	 loss: 0.8295	 dice: 0.1955	 iou: 0.1125	 acc: 0.4124	 sens: 0.1125	 spec: 0.4124
+ Results on val:	 loss: 0.7565	 dice: 0.0221	 iou: 0.0118	 acc: 0.8810	 sens: 0.0118	 spec: 0.8810
+
+Epoch 2 results:
+ Results on train:	 loss: 0.7449	 dice: 0.1925	 iou: 0.1132	 acc: 0.6637	 sens: 0.1132	 spec: 0.6637
+ Results on val:	 loss: 0.7407	 dice: 0.0122	 iou: 0.0064	 acc: 0.8984	 sens: 0.0064	 spec: 0.8984
+
+Epoch 3 results:
+ Results on train:	 loss: 0.6910	 dice: 0.1512	 iou: 0.0900	 acc: 0.7926	 sens: 0.0900	 spec: 0.7926
+ Results on val:	 loss: 0.7004	 dice: 0.0111	 iou: 0.0058	 acc: 0.9045	 sens: 0.0058	 spec: 0.9045
+
+Epoch 4 results:
+ Results on train:	 loss: 0.6466	 dice: 0.1090	 iou: 0.0662	 acc: 0.8468	 sens: 0.0662	 spec: 0.8468
+ Results on val:	 loss: 0.6284	 dice: 0.0101	 iou: 0.0053	 acc: 0.9053	 sens: 0.0053	 spec: 0.9053
+
+Epoch 5 results:
+ Results on train:	 loss: 0.6150	 dice: 0.0790	 iou: 0.0490	 acc: 0.8643	 sens: 0.0490	 spec: 0.8643
+ Results on val:	 loss: 0.5701	 dice: 0.0001	 iou: 0.0001	 acc: 0.9077	 sens: 0.0001	 spec: 0.9077
+
+Epoch 6 results:
+ Results on train:	 loss: 0.5892	 dice: 0.0618	 iou: 0.0391	 acc: 0.8768	 sens: 0.0391	 spec: 0.8768
+ Results on val:	 loss: 0.5336	 dice: 0.0000	 iou: 0.0000	 acc: 0.9077	 sens: 0.0000	 spec: 0.9077
+
+Epoch 7 results:
+ Results on train:	 loss: 0.5742	 dice: 0.0613	 iou: 0.0389	 acc: 0.8759	 sens: 0.0389	 spec: 0.8759
+ Results on val:	 loss: 0.5248	 dice: 0.0000	 iou: 0.0000	 acc: 0.9077	 sens: 0.0000	 spec: 0.9077
+
+Epoch 8 results:
+ Results on train:	 loss: 0.5577	 dice: 0.0605	 iou: 0.0386	 acc: 0.8780	 sens: 0.0386	 spec: 0.8780
+ Results on val:	 loss: 0.5183	 dice: 0.0000	 iou: 0.0000	 acc: 0.9077	 sens: 0.0000	 spec: 0.9077
+
+Epoch 9 results:
+ Results on train:	 loss: 0.5501	 dice: 0.0903	 iou: 0.0568	 acc: 0.8733	 sens: 0.0568	 spec: 0.8733
+ Results on val:	 loss: 0.5080	 dice: 0.0000	 iou: 0.0000	 acc: 0.9077	 sens: 0.0000	 spec: 0.9077
+
+Epoch 10 results:
+ Results on train:	 loss: 0.5419	 dice: 0.0833	 iou: 0.0530	 acc: 0.8763	 sens: 0.0530	 spec: 0.8763
+ Results on val:	 loss: 0.4946	 dice: 0.0000	 iou: 0.0000	 acc: 0.9077	 sens: 0.0000	 spec: 0.9077
+
+Epoch 11 results:
+ Results on train:	 loss: 0.5328	 dice: 0.0952	 iou: 0.0604	 acc: 0.8771	 sens: 0.0604	 spec: 0.8771
+ Results on val:	 loss: 0.4873	 dice: 0.0107	 iou: 0.0072	 acc: 0.9080	 sens: 0.0072	 spec: 0.9080
+
+Epoch 12 results:
+ Results on train:	 loss: 0.5255	 dice: 0.1140	 iou: 0.0713	 acc: 0.8770	 sens: 0.0713	 spec: 0.8770
+ Results on val:	 loss: 0.4737	 dice: 0.0121	 iou: 0.0081	 acc: 0.9077	 sens: 0.0081	 spec: 0.9077
+
+Epoch 13 results:
+ Results on train:	 loss: 0.5175	 dice: 0.1540	 iou: 0.0969	 acc: 0.8748	 sens: 0.0969	 spec: 0.8748
+ Results on val:	 loss: 0.4715	 dice: 0.0256	 iou: 0.0160	 acc: 0.9072	 sens: 0.0160	 spec: 0.9072
+
+Epoch 14 results:
+ Results on train:	 loss: 0.5129	 dice: 0.1550	 iou: 0.0981	 acc: 0.8763	 sens: 0.0981	 spec: 0.8763
+ Results on val:	 loss: 0.4773	 dice: 0.0724	 iou: 0.0432	 acc: 0.9047	 sens: 0.0432	 spec: 0.9047
+
+Epoch 15 results:
+ Results on train:	 loss: 0.5077	 dice: 0.1680	 iou: 0.1064	 acc: 0.8779	 sens: 0.1064	 spec: 0.8779
+ Results on val:	 loss: 0.4714	 dice: 0.0761	 iou: 0.0458	 acc: 0.9035	 sens: 0.0458	 spec: 0.9035
+
+Epoch 16 results:
+ Results on train:	 loss: 0.5025	 dice: 0.1757	 iou: 0.1121	 acc: 0.8764	 sens: 0.1121	 spec: 0.8764
+ Results on val:	 loss: 0.4616	 dice: 0.0445	 iou: 0.0271	 acc: 0.9060	 sens: 0.0271	 spec: 0.9060
+
+Epoch 17 results:
+ Results on train:	 loss: 0.4951	 dice: 0.2027	 iou: 0.1294	 acc: 0.8778	 sens: 0.1294	 spec: 0.8778
+ Results on val:	 loss: 0.4718	 dice: 0.1555	 iou: 0.0935	 acc: 0.8946	 sens: 0.0935	 spec: 0.8946
+
+Epoch 18 results:
+ Results on train:	 loss: 0.4929	 dice: 0.2199	 iou: 0.1395	 acc: 0.8782	 sens: 0.1395	 spec: 0.8782
+ Results on val:	 loss: 0.4559	 dice: 0.0922	 iou: 0.0552	 acc: 0.9022	 sens: 0.0552	 spec: 0.9022
+
+Epoch 19 results:
+ Results on train:	 loss: 0.4876	 dice: 0.2314	 iou: 0.1475	 acc: 0.8749	 sens: 0.1475	 spec: 0.8749
+ Results on val:	 loss: 0.4494	 dice: 0.0713	 iou: 0.0432	 acc: 0.9054	 sens: 0.0432	 spec: 0.9054
+
+Epoch 20 results:
+ Results on train:	 loss: 0.4822	 dice: 0.2449	 iou: 0.1570	 acc: 0.8780	 sens: 0.1570	 spec: 0.8780
+ Results on val:	 loss: 0.4484	 dice: 0.1409	 iou: 0.0851	 acc: 0.9012	 sens: 0.0851	 spec: 0.9012
+
+Epoch 21 results:
+ Results on train:	 loss: 0.4814	 dice: 0.2520	 iou: 0.1613	 acc: 0.8769	 sens: 0.1613	 spec: 0.8769
+ Results on val:	 loss: 0.4532	 dice: 0.1084	 iou: 0.0655	 acc: 0.9030	 sens: 0.0655	 spec: 0.9030
+
+Current validation loss (0.45317593216896057) is larger than for the previous epoch (0.4484097957611084)!
+Trained for 21 epochs.
+Early stopping applies!
+
+--- Fold 2/8 ---
+Epoch 1 results:
+ Results on train:	 loss: 0.6694	 dice: 0.0954	 iou: 0.0548	 acc: 0.8131	 sens: 0.0548	 spec: 0.8131
+ Results on val:	 loss: 0.7798	 dice: 0.0000	 iou: 0.0000	 acc: 0.8588	 sens: 0.0000	 spec: 0.8588
+
+Epoch 2 results:
+ Results on train:	 loss: 0.6188	 dice: 0.0438	 iou: 0.0261	 acc: 0.8729	 sens: 0.0261	 spec: 0.8729
+ Results on val:	 loss: 0.7437	 dice: 0.0000	 iou: 0.0000	 acc: 0.8588	 sens: 0.0000	 spec: 0.8588
+
+Epoch 3 results:
+ Results on train:	 loss: 0.5857	 dice: 0.0275	 iou: 0.0169	 acc: 0.8847	 sens: 0.0169	 spec: 0.8847
+ Results on val:	 loss: 0.6892	 dice: 0.0000	 iou: 0.0000	 acc: 0.8588	 sens: 0.0000	 spec: 0.8588
+
+Epoch 4 results:
+ Results on train:	 loss: 0.5631	 dice: 0.0221	 iou: 0.0136	 acc: 0.8880	 sens: 0.0136	 spec: 0.8880
+ Results on val:	 loss: 0.6445	 dice: 0.0000	 iou: 0.0000	 acc: 0.8588	 sens: 0.0000	 spec: 0.8588
+
+Epoch 5 results:
+ Results on train:	 loss: 0.5458	 dice: 0.0186	 iou: 0.0118	 acc: 0.8889	 sens: 0.0118	 spec: 0.8889
+ Results on val:	 loss: 0.6272	 dice: 0.0000	 iou: 0.0000	 acc: 0.8588	 sens: 0.0000	 spec: 0.8588
+
+Epoch 6 results:
+ Results on train:	 loss: 0.5364	 dice: 0.0318	 iou: 0.0196	 acc: 0.8880	 sens: 0.0196	 spec: 0.8880
+ Results on val:	 loss: 0.6207	 dice: 0.0000	 iou: 0.0000	 acc: 0.8588	 sens: 0.0000	 spec: 0.8588
+
+Epoch 7 results:
+ Results on train:	 loss: 0.5261	 dice: 0.0394	 iou: 0.0241	 acc: 0.8880	 sens: 0.0241	 spec: 0.8880
+ Results on val:	 loss: 0.6036	 dice: 0.0002	 iou: 0.0001	 acc: 0.8588	 sens: 0.0001	 spec: 0.8588
+
+Epoch 8 results:
+ Results on train:	 loss: 0.5208	 dice: 0.0652	 iou: 0.0403	 acc: 0.8872	 sens: 0.0403	 spec: 0.8872
+ Results on val:	 loss: 0.6046	 dice: 0.0000	 iou: 0.0000	 acc: 0.8588	 sens: 0.0000	 spec: 0.8588
+
+Epoch 9 results:
+ Results on train:	 loss: 0.5090	 dice: 0.0576	 iou: 0.0359	 acc: 0.8891	 sens: 0.0359	 spec: 0.8891
+ Results on val:	 loss: 0.5948	 dice: 0.0152	 iou: 0.0089	 acc: 0.8588	 sens: 0.0089	 spec: 0.8588
+
+Epoch 10 results:
+ Results on train:	 loss: 0.5032	 dice: 0.0742	 iou: 0.0464	 acc: 0.8877	 sens: 0.0464	 spec: 0.8877
+ Results on val:	 loss: 0.5786	 dice: 0.0675	 iou: 0.0440	 acc: 0.8549	 sens: 0.0440	 spec: 0.8549
+
+Epoch 11 results:
+ Results on train:	 loss: 0.4989	 dice: 0.0990	 iou: 0.0614	 acc: 0.8867	 sens: 0.0614	 spec: 0.8867
+ Results on val:	 loss: 0.5889	 dice: 0.0562	 iou: 0.0367	 acc: 0.8585	 sens: 0.0367	 spec: 0.8585
+
+Epoch 12 results:
+ Results on train:	 loss: 0.4943	 dice: 0.1214	 iou: 0.0753	 acc: 0.8847	 sens: 0.0753	 spec: 0.8847
+ Results on val:	 loss: 0.5874	 dice: 0.1093	 iou: 0.0696	 acc: 0.8534	 sens: 0.0696	 spec: 0.8534
+
+Epoch 13 results:
+ Results on train:	 loss: 0.4886	 dice: 0.1292	 iou: 0.0801	 acc: 0.8870	 sens: 0.0801	 spec: 0.8870
+ Results on val:	 loss: 0.5735	 dice: 0.1050	 iou: 0.0690	 acc: 0.8566	 sens: 0.0690	 spec: 0.8566
+
+Epoch 14 results:
+ Results on train:	 loss: 0.4840	 dice: 0.1439	 iou: 0.0894	 acc: 0.8870	 sens: 0.0894	 spec: 0.8870
+ Results on val:	 loss: 0.5921	 dice: 0.1548	 iou: 0.0979	 acc: 0.8471	 sens: 0.0979	 spec: 0.8471
+
+Epoch 15 results:
+ Results on train:	 loss: 0.4795	 dice: 0.1745	 iou: 0.1092	 acc: 0.8854	 sens: 0.1092	 spec: 0.8854
+ Results on val:	 loss: 0.5775	 dice: 0.1166	 iou: 0.0751	 acc: 0.8521	 sens: 0.0751	 spec: 0.8521
+
+Epoch 16 results:
+ Results on train:	 loss: 0.4764	 dice: 0.1893	 iou: 0.1184	 acc: 0.8857	 sens: 0.1184	 spec: 0.8857
+ Results on val:	 loss: 0.5761	 dice: 0.1681	 iou: 0.1057	 acc: 0.8462	 sens: 0.1057	 spec: 0.8462
+
+Epoch 17 results:
+ Results on train:	 loss: 0.4714	 dice: 0.1908	 iou: 0.1196	 acc: 0.8875	 sens: 0.1196	 spec: 0.8875
+ Results on val:	 loss: 0.5833	 dice: 0.1888	 iou: 0.1221	 acc: 0.8524	 sens: 0.1221	 spec: 0.8524
+
+Epoch 18 results:
+ Results on train:	 loss: 0.4659	 dice: 0.2296	 iou: 0.1448	 acc: 0.8829	 sens: 0.1448	 spec: 0.8829
+ Results on val:	 loss: 0.5613	 dice: 0.1823	 iou: 0.1185	 acc: 0.8527	 sens: 0.1185	 spec: 0.8527
+
+Epoch 19 results:
+ Results on train:	 loss: 0.4636	 dice: 0.2215	 iou: 0.1400	 acc: 0.8856	 sens: 0.1400	 spec: 0.8856
+ Results on val:	 loss: 0.5885	 dice: 0.1667	 iou: 0.1077	 acc: 0.8592	 sens: 0.1077	 spec: 0.8592
+
+Epoch 20 results:
+ Results on train:	 loss: 0.4589	 dice: 0.2409	 iou: 0.1526	 acc: 0.8865	 sens: 0.1526	 spec: 0.8865
+ Results on val:	 loss: 0.5516	 dice: 0.2074	 iou: 0.1367	 acc: 0.8516	 sens: 0.1367	 spec: 0.8516
+
+Epoch 21 results:
+ Results on train:	 loss: 0.4539	 dice: 0.2668	 iou: 0.1699	 acc: 0.8846	 sens: 0.1699	 spec: 0.8846
+ Results on val:	 loss: 0.5463	 dice: 0.2296	 iou: 0.1486	 acc: 0.8422	 sens: 0.1486	 spec: 0.8422
+
+Validation loss improved from 0.5516 to 0.5463.
+Epoch 22 results:
+ Results on train:	 loss: 0.4512	 dice: 0.2672	 iou: 0.1715	 acc: 0.8874	 sens: 0.1715	 spec: 0.8874
+ Results on val:	 loss: 0.5614	 dice: 0.1971	 iou: 0.1275	 acc: 0.8601	 sens: 0.1275	 spec: 0.8601
+
+Current validation loss (0.5614123344421387) is larger than for the previous epoch (0.5462599396705627)!
+Trained for 22 epochs.
+Early stopping applies!
+
+--- Fold 3/8 ---
+Epoch 1 results:
+ Results on train:	 loss: 0.8161	 dice: 0.1978	 iou: 0.1140	 acc: 0.3827	 sens: 0.1140	 spec: 0.3827
+ Results on val:	 loss: 0.7735	 dice: 0.1604	 iou: 0.0884	 acc: 0.0884	 sens: 0.0884	 spec: 0.0884
+
+Epoch 2 results:
+ Results on train:	 loss: 0.7421	 dice: 0.1593	 iou: 0.0936	 acc: 0.6865	 sens: 0.0936	 spec: 0.6865
+ Results on val:	 loss: 0.7685	 dice: 0.1603	 iou: 0.0884	 acc: 0.0886	 sens: 0.0884	 spec: 0.0886
+
+Epoch 3 results:
+ Results on train:	 loss: 0.6822	 dice: 0.1161	 iou: 0.0693	 acc: 0.8087	 sens: 0.0693	 spec: 0.8087
+ Results on val:	 loss: 0.7139	 dice: 0.0259	 iou: 0.0140	 acc: 0.8938	 sens: 0.0140	 spec: 0.8938
+
+Epoch 4 results:
+ Results on train:	 loss: 0.6437	 dice: 0.0817	 iou: 0.0491	 acc: 0.8533	 sens: 0.0491	 spec: 0.8533
+ Results on val:	 loss: 0.6231	 dice: 0.0076	 iou: 0.0040	 acc: 0.9052	 sens: 0.0040	 spec: 0.9052
+
+Epoch 5 results:
+ Results on train:	 loss: 0.6155	 dice: 0.0622	 iou: 0.0387	 acc: 0.8648	 sens: 0.0387	 spec: 0.8648
+ Results on val:	 loss: 0.5637	 dice: 0.0005	 iou: 0.0003	 acc: 0.9092	 sens: 0.0003	 spec: 0.9092
+
+Epoch 6 results:
+ Results on train:	 loss: 0.5938	 dice: 0.0452	 iou: 0.0285	 acc: 0.8750	 sens: 0.0285	 spec: 0.8750
+ Results on val:	 loss: 0.5357	 dice: 0.0000	 iou: 0.0000	 acc: 0.9116	 sens: 0.0000	 spec: 0.9116
+
+Epoch 7 results:
+ Results on train:	 loss: 0.5771	 dice: 0.0467	 iou: 0.0294	 acc: 0.8782	 sens: 0.0294	 spec: 0.8782
+ Results on val:	 loss: 0.5140	 dice: 0.0000	 iou: 0.0000	 acc: 0.9116	 sens: 0.0000	 spec: 0.9116
+
+Epoch 8 results:
+ Results on train:	 loss: 0.5629	 dice: 0.0635	 iou: 0.0402	 acc: 0.8765	 sens: 0.0402	 spec: 0.8765
+ Results on val:	 loss: 0.4972	 dice: 0.0000	 iou: 0.0000	 acc: 0.9116	 sens: 0.0000	 spec: 0.9116
+
+Epoch 9 results:
+ Results on train:	 loss: 0.5524	 dice: 0.0638	 iou: 0.0403	 acc: 0.8786	 sens: 0.0403	 spec: 0.8786
+ Results on val:	 loss: 0.4918	 dice: 0.0000	 iou: 0.0000	 acc: 0.9116	 sens: 0.0000	 spec: 0.9116
+
+Epoch 10 results:
+ Results on train:	 loss: 0.5445	 dice: 0.0863	 iou: 0.0550	 acc: 0.8767	 sens: 0.0550	 spec: 0.8767
+ Results on val:	 loss: 0.4878	 dice: 0.0000	 iou: 0.0000	 acc: 0.9116	 sens: 0.0000	 spec: 0.9116
+
+Epoch 11 results:
+ Results on train:	 loss: 0.5360	 dice: 0.0971	 iou: 0.0610	 acc: 0.8748	 sens: 0.0610	 spec: 0.8748
+ Results on val:	 loss: 0.4933	 dice: 0.0318	 iou: 0.0186	 acc: 0.9086	 sens: 0.0186	 spec: 0.9086
+
+Epoch 12 results:
+ Results on train:	 loss: 0.5294	 dice: 0.1123	 iou: 0.0709	 acc: 0.8761	 sens: 0.0709	 spec: 0.8761
+ Results on val:	 loss: 0.4696	 dice: 0.0000	 iou: 0.0000	 acc: 0.9116	 sens: 0.0000	 spec: 0.9116
+
+Epoch 13 results:
+ Results on train:	 loss: 0.5213	 dice: 0.1150	 iou: 0.0721	 acc: 0.8787	 sens: 0.0721	 spec: 0.8787
+ Results on val:	 loss: 0.4663	 dice: 0.0055	 iou: 0.0032	 acc: 0.9113	 sens: 0.0032	 spec: 0.9113
+
+Epoch 14 results:
+ Results on train:	 loss: 0.5172	 dice: 0.1529	 iou: 0.0961	 acc: 0.8746	 sens: 0.0961	 spec: 0.8746
+ Results on val:	 loss: 0.4689	 dice: 0.0104	 iou: 0.0060	 acc: 0.9108	 sens: 0.0060	 spec: 0.9108
+
+Epoch 15 results:
+ Results on train:	 loss: 0.5134	 dice: 0.1378	 iou: 0.0867	 acc: 0.8786	 sens: 0.0867	 spec: 0.8786
+ Results on val:	 loss: 0.4736	 dice: 0.0341	 iou: 0.0203	 acc: 0.9074	 sens: 0.0203	 spec: 0.9074
+
+Epoch 16 results:
+ Results on train:	 loss: 0.5069	 dice: 0.1692	 iou: 0.1068	 acc: 0.8761	 sens: 0.1068	 spec: 0.8761
+ Results on val:	 loss: 0.4531	 dice: 0.0138	 iou: 0.0079	 acc: 0.9103	 sens: 0.0079	 spec: 0.9103
+
+Epoch 17 results:
+ Results on train:	 loss: 0.5046	 dice: 0.1853	 iou: 0.1165	 acc: 0.8742	 sens: 0.1165	 spec: 0.8742
+ Results on val:	 loss: 0.4550	 dice: 0.0425	 iou: 0.0251	 acc: 0.9081	 sens: 0.0251	 spec: 0.9081
+
+Epoch 18 results:
+ Results on train:	 loss: 0.4994	 dice: 0.1869	 iou: 0.1188	 acc: 0.8765	 sens: 0.1188	 spec: 0.8765
+ Results on val:	 loss: 0.4535	 dice: 0.0282	 iou: 0.0167	 acc: 0.9085	 sens: 0.0167	 spec: 0.9085
+
+Epoch 19 results:
+ Results on train:	 loss: 0.4964	 dice: 0.2027	 iou: 0.1283	 acc: 0.8764	 sens: 0.1283	 spec: 0.8764
+ Results on val:	 loss: 0.4452	 dice: 0.0199	 iou: 0.0120	 acc: 0.9108	 sens: 0.0120	 spec: 0.9108
+
+Epoch 20 results:
+ Results on train:	 loss: 0.4915	 dice: 0.2220	 iou: 0.1400	 acc: 0.8752	 sens: 0.1400	 spec: 0.8752
+ Results on val:	 loss: 0.4429	 dice: 0.0576	 iou: 0.0347	 acc: 0.9087	 sens: 0.0347	 spec: 0.9087
+
+Epoch 21 results:
+ Results on train:	 loss: 0.4878	 dice: 0.2233	 iou: 0.1425	 acc: 0.8776	 sens: 0.1425	 spec: 0.8776
+ Results on val:	 loss: 0.4420	 dice: 0.0201	 iou: 0.0116	 acc: 0.9110	 sens: 0.0116	 spec: 0.9110
+
+Validation loss improved from 0.4429 to 0.4420.
+Epoch 22 results:
+ Results on train:	 loss: 0.4844	 dice: 0.2362	 iou: 0.1503	 acc: 0.8789	 sens: 0.1503	 spec: 0.8789
+ Results on val:	 loss: 0.4363	 dice: 0.0556	 iou: 0.0333	 acc: 0.9096	 sens: 0.0333	 spec: 0.9096
+
+Validation loss improved from 0.4420 to 0.4363.
+Epoch 23 results:
+ Results on train:	 loss: 0.4788	 dice: 0.2741	 iou: 0.1755	 acc: 0.8750	 sens: 0.1755	 spec: 0.8750
+ Results on val:	 loss: 0.4324	 dice: 0.0761	 iou: 0.0454	 acc: 0.9102	 sens: 0.0454	 spec: 0.9102
+
+Validation loss improved from 0.4363 to 0.4324.
+Epoch 24 results:
+ Results on train:	 loss: 0.4745	 dice: 0.2584	 iou: 0.1650	 acc: 0.8800	 sens: 0.1650	 spec: 0.8800
+ Results on val:	 loss: 0.4271	 dice: 0.0605	 iou: 0.0364	 acc: 0.9103	 sens: 0.0364	 spec: 0.9103
+
+Validation loss improved from 0.4324 to 0.4271.
+Epoch 25 results:
+ Results on train:	 loss: 0.4744	 dice: 0.2630	 iou: 0.1685	 acc: 0.8798	 sens: 0.1685	 spec: 0.8798
+ Results on val:	 loss: 0.4256	 dice: 0.1214	 iou: 0.0736	 acc: 0.9094	 sens: 0.0736	 spec: 0.9094
+
+Validation loss improved from 0.4271 to 0.4256.
+Epoch 26 results:
+ Results on train:	 loss: 0.4700	 dice: 0.2842	 iou: 0.1836	 acc: 0.8794	 sens: 0.1836	 spec: 0.8794
+ Results on val:	 loss: 0.4281	 dice: 0.1102	 iou: 0.0667	 acc: 0.9094	 sens: 0.0667	 spec: 0.9094
+
+Current validation loss (0.4280840754508972) is larger than for the previous epoch (0.4256497323513031)!
+Trained for 26 epochs.
+Early stopping applies!
+
+--- Fold 4/8 ---
+Epoch 1 results:
+ Results on train:	 loss: 0.7876	 dice: 0.1809	 iou: 0.1041	 acc: 0.5065	 sens: 0.1041	 spec: 0.5065
+ Results on val:	 loss: 0.7898	 dice: 0.2178	 iou: 0.1247	 acc: 0.1312	 sens: 0.1247	 spec: 0.1312
+
+Epoch 2 results:
+ Results on train:	 loss: 0.7220	 dice: 0.1555	 iou: 0.0916	 acc: 0.7273	 sens: 0.0916	 spec: 0.7273
+ Results on val:	 loss: 0.7824	 dice: 0.2052	 iou: 0.1169	 acc: 0.1963	 sens: 0.1169	 spec: 0.1963
+
+Epoch 3 results:
+ Results on train:	 loss: 0.6630	 dice: 0.1096	 iou: 0.0665	 acc: 0.8310	 sens: 0.0665	 spec: 0.8310
+ Results on val:	 loss: 0.7380	 dice: 0.0134	 iou: 0.0070	 acc: 0.8723	 sens: 0.0070	 spec: 0.8723
+
+Epoch 4 results:
+ Results on train:	 loss: 0.6264	 dice: 0.0852	 iou: 0.0517	 acc: 0.8550	 sens: 0.0517	 spec: 0.8550
+ Results on val:	 loss: 0.6739	 dice: 0.0000	 iou: 0.0000	 acc: 0.8747	 sens: 0.0000	 spec: 0.8747
+
+Epoch 5 results:
+ Results on train:	 loss: 0.5931	 dice: 0.0583	 iou: 0.0365	 acc: 0.8749	 sens: 0.0365	 spec: 0.8749
+ Results on val:	 loss: 0.6171	 dice: 0.0000	 iou: 0.0000	 acc: 0.8747	 sens: 0.0000	 spec: 0.8747
+
+Epoch 6 results:
+ Results on train:	 loss: 0.5701	 dice: 0.0546	 iou: 0.0344	 acc: 0.8775	 sens: 0.0344	 spec: 0.8775
+ Results on val:	 loss: 0.5977	 dice: 0.0000	 iou: 0.0000	 acc: 0.8747	 sens: 0.0000	 spec: 0.8747
+
+Epoch 7 results:
+ Results on train:	 loss: 0.5569	 dice: 0.0506	 iou: 0.0313	 acc: 0.8827	 sens: 0.0313	 spec: 0.8827
+ Results on val:	 loss: 0.5897	 dice: 0.0000	 iou: 0.0000	 acc: 0.8747	 sens: 0.0000	 spec: 0.8747
+
+Epoch 8 results:
+ Results on train:	 loss: 0.5411	 dice: 0.0668	 iou: 0.0420	 acc: 0.8773	 sens: 0.0420	 spec: 0.8773
+ Results on val:	 loss: 0.5851	 dice: 0.0000	 iou: 0.0000	 acc: 0.8747	 sens: 0.0000	 spec: 0.8747
+
+Epoch 9 results:
+ Results on train:	 loss: 0.5326	 dice: 0.0702	 iou: 0.0440	 acc: 0.8812	 sens: 0.0440	 spec: 0.8812
+ Results on val:	 loss: 0.5834	 dice: 0.0000	 iou: 0.0000	 acc: 0.8747	 sens: 0.0000	 spec: 0.8747
+
+Epoch 10 results:
+ Results on train:	 loss: 0.5234	 dice: 0.0687	 iou: 0.0436	 acc: 0.8846	 sens: 0.0436	 spec: 0.8846
+ Results on val:	 loss: 0.5684	 dice: 0.0145	 iou: 0.0082	 acc: 0.8752	 sens: 0.0082	 spec: 0.8752
+
+Epoch 11 results:
+ Results on train:	 loss: 0.5157	 dice: 0.0880	 iou: 0.0563	 acc: 0.8832	 sens: 0.0563	 spec: 0.8832
+ Results on val:	 loss: 0.5700	 dice: 0.0048	 iou: 0.0028	 acc: 0.8750	 sens: 0.0028	 spec: 0.8750
+
+Epoch 12 results:
+ Results on train:	 loss: 0.5084	 dice: 0.1056	 iou: 0.0671	 acc: 0.8821	 sens: 0.0671	 spec: 0.8821
+ Results on val:	 loss: 0.5720	 dice: 0.0107	 iou: 0.0062	 acc: 0.8751	 sens: 0.0062	 spec: 0.8751
+
+Epoch 13 results:
+ Results on train:	 loss: 0.5052	 dice: 0.1222	 iou: 0.0765	 acc: 0.8817	 sens: 0.0765	 spec: 0.8817
+ Results on val:	 loss: 0.5513	 dice: 0.0468	 iou: 0.0272	 acc: 0.8765	 sens: 0.0272	 spec: 0.8765
+
+Epoch 14 results:
+ Results on train:	 loss: 0.4966	 dice: 0.1388	 iou: 0.0875	 acc: 0.8834	 sens: 0.0875	 spec: 0.8834
+ Results on val:	 loss: 0.5436	 dice: 0.1484	 iou: 0.0912	 acc: 0.8737	 sens: 0.0912	 spec: 0.8737
+
+Epoch 15 results:
+ Results on train:	 loss: 0.4929	 dice: 0.1401	 iou: 0.0881	 acc: 0.8840	 sens: 0.0881	 spec: 0.8840
+ Results on val:	 loss: 0.5383	 dice: 0.0999	 iou: 0.0623	 acc: 0.8769	 sens: 0.0623	 spec: 0.8769
+
+Epoch 16 results:
+ Results on train:	 loss: 0.4868	 dice: 0.1479	 iou: 0.0940	 acc: 0.8846	 sens: 0.0940	 spec: 0.8846
+ Results on val:	 loss: 0.5399	 dice: 0.0945	 iou: 0.0582	 acc: 0.8772	 sens: 0.0582	 spec: 0.8772
+
+Epoch 17 results:
+ Results on train:	 loss: 0.4831	 dice: 0.1749	 iou: 0.1106	 acc: 0.8813	 sens: 0.1106	 spec: 0.8813
+ Results on val:	 loss: 0.5289	 dice: 0.1546	 iou: 0.0961	 acc: 0.8768	 sens: 0.0961	 spec: 0.8768
+
+Epoch 18 results:
+ Results on train:	 loss: 0.4817	 dice: 0.1945	 iou: 0.1221	 acc: 0.8811	 sens: 0.1221	 spec: 0.8811
+ Results on val:	 loss: 0.5337	 dice: 0.1274	 iou: 0.0785	 acc: 0.8787	 sens: 0.0785	 spec: 0.8787
+
+Epoch 19 results:
+ Results on train:	 loss: 0.4759	 dice: 0.1888	 iou: 0.1200	 acc: 0.8844	 sens: 0.1200	 spec: 0.8844
+ Results on val:	 loss: 0.5276	 dice: 0.1824	 iou: 0.1129	 acc: 0.8762	 sens: 0.1129	 spec: 0.8762
+
+Epoch 20 results:
+ Results on train:	 loss: 0.4785	 dice: 0.1990	 iou: 0.1250	 acc: 0.8845	 sens: 0.1250	 spec: 0.8845
+ Results on val:	 loss: 0.5288	 dice: 0.1846	 iou: 0.1165	 acc: 0.8768	 sens: 0.1165	 spec: 0.8768
+
+Epoch 21 results:
+ Results on train:	 loss: 0.4718	 dice: 0.2341	 iou: 0.1492	 acc: 0.8806	 sens: 0.1492	 spec: 0.8806
+ Results on val:	 loss: 0.5181	 dice: 0.2192	 iou: 0.1386	 acc: 0.8786	 sens: 0.1386	 spec: 0.8786
+
+Validation loss improved from 0.5288 to 0.5181.
+Epoch 22 results:
+ Results on train:	 loss: 0.4657	 dice: 0.2242	 iou: 0.1434	 acc: 0.8840	 sens: 0.1434	 spec: 0.8840
+ Results on val:	 loss: 0.5146	 dice: 0.2213	 iou: 0.1391	 acc: 0.8793	 sens: 0.1391	 spec: 0.8793
+
+Validation loss improved from 0.5181 to 0.5146.
+Epoch 23 results:
+ Results on train:	 loss: 0.4639	 dice: 0.2287	 iou: 0.1457	 acc: 0.8854	 sens: 0.1457	 spec: 0.8854
+ Results on val:	 loss: 0.5236	 dice: 0.1497	 iou: 0.0930	 acc: 0.8810	 sens: 0.0930	 spec: 0.8810
+
+Current validation loss (0.5236002802848816) is larger than for the previous epoch (0.5145633816719055)!
+Trained for 23 epochs.
+Early stopping applies!
+
+--- Fold 5/8 ---
+Epoch 1 results:
+ Results on train:	 loss: 0.8147	 dice: 0.1930	 iou: 0.1112	 acc: 0.4137	 sens: 0.1112	 spec: 0.4137
+ Results on val:	 loss: 0.7816	 dice: 0.1867	 iou: 0.1053	 acc: 0.1053	 sens: 0.1053	 spec: 0.1053
+
+Epoch 2 results:
+ Results on train:	 loss: 0.7331	 dice: 0.1686	 iou: 0.0996	 acc: 0.7023	 sens: 0.0996	 spec: 0.7023
+ Results on val:	 loss: 0.7624	 dice: 0.0600	 iou: 0.0339	 acc: 0.7951	 sens: 0.0339	 spec: 0.7951
+
+Epoch 3 results:
+ Results on train:	 loss: 0.6760	 dice: 0.1159	 iou: 0.0697	 acc: 0.8176	 sens: 0.0697	 spec: 0.8176
+ Results on val:	 loss: 0.7341	 dice: 0.0143	 iou: 0.0077	 acc: 0.8782	 sens: 0.0077	 spec: 0.8782
+
+Epoch 4 results:
+ Results on train:	 loss: 0.6322	 dice: 0.0772	 iou: 0.0478	 acc: 0.8588	 sens: 0.0478	 spec: 0.8588
+ Results on val:	 loss: 0.6578	 dice: 0.0014	 iou: 0.0008	 acc: 0.8934	 sens: 0.0008	 spec: 0.8934
+
+Epoch 5 results:
+ Results on train:	 loss: 0.6000	 dice: 0.0636	 iou: 0.0400	 acc: 0.8693	 sens: 0.0400	 spec: 0.8693
+ Results on val:	 loss: 0.6008	 dice: 0.0008	 iou: 0.0004	 acc: 0.8947	 sens: 0.0004	 spec: 0.8947
+
+Epoch 6 results:
+ Results on train:	 loss: 0.5794	 dice: 0.0573	 iou: 0.0368	 acc: 0.8767	 sens: 0.0368	 spec: 0.8767
+ Results on val:	 loss: 0.5723	 dice: 0.0004	 iou: 0.0002	 acc: 0.8947	 sens: 0.0002	 spec: 0.8947
+
+Epoch 7 results:
+ Results on train:	 loss: 0.5625	 dice: 0.0632	 iou: 0.0399	 acc: 0.8800	 sens: 0.0399	 spec: 0.8800
+ Results on val:	 loss: 0.5511	 dice: 0.0000	 iou: 0.0000	 acc: 0.8947	 sens: 0.0000	 spec: 0.8947
+
+Epoch 8 results:
+ Results on train:	 loss: 0.5499	 dice: 0.0626	 iou: 0.0399	 acc: 0.8802	 sens: 0.0399	 spec: 0.8802
+ Results on val:	 loss: 0.5459	 dice: 0.0000	 iou: 0.0000	 acc: 0.8947	 sens: 0.0000	 spec: 0.8947
+
+Epoch 9 results:
+ Results on train:	 loss: 0.5383	 dice: 0.0674	 iou: 0.0431	 acc: 0.8814	 sens: 0.0431	 spec: 0.8814
+ Results on val:	 loss: 0.5320	 dice: 0.0000	 iou: 0.0000	 acc: 0.8947	 sens: 0.0000	 spec: 0.8947
+
+Epoch 10 results:
+ Results on train:	 loss: 0.5311	 dice: 0.0986	 iou: 0.0625	 acc: 0.8780	 sens: 0.0625	 spec: 0.8780
+ Results on val:	 loss: 0.5313	 dice: 0.0008	 iou: 0.0004	 acc: 0.8945	 sens: 0.0004	 spec: 0.8945
+
+Epoch 11 results:
+ Results on train:	 loss: 0.5236	 dice: 0.1124	 iou: 0.0709	 acc: 0.8748	 sens: 0.0709	 spec: 0.8748
+ Results on val:	 loss: 0.5296	 dice: 0.0033	 iou: 0.0018	 acc: 0.8942	 sens: 0.0018	 spec: 0.8942
+
+Epoch 12 results:
+ Results on train:	 loss: 0.5166	 dice: 0.1151	 iou: 0.0728	 acc: 0.8813	 sens: 0.0728	 spec: 0.8813
+ Results on val:	 loss: 0.5280	 dice: 0.0482	 iou: 0.0293	 acc: 0.8897	 sens: 0.0293	 spec: 0.8897
+
+Epoch 13 results:
+ Results on train:	 loss: 0.5087	 dice: 0.1342	 iou: 0.0852	 acc: 0.8781	 sens: 0.0852	 spec: 0.8781
+ Results on val:	 loss: 0.5198	 dice: 0.0411	 iou: 0.0249	 acc: 0.8923	 sens: 0.0249	 spec: 0.8923
+
+Epoch 14 results:
+ Results on train:	 loss: 0.5031	 dice: 0.1529	 iou: 0.0969	 acc: 0.8805	 sens: 0.0969	 spec: 0.8805
+ Results on val:	 loss: 0.5278	 dice: 0.0993	 iou: 0.0592	 acc: 0.8791	 sens: 0.0592	 spec: 0.8791
+
+Epoch 15 results:
+ Results on train:	 loss: 0.4948	 dice: 0.1653	 iou: 0.1053	 acc: 0.8813	 sens: 0.1053	 spec: 0.8813
+ Results on val:	 loss: 0.5308	 dice: 0.1127	 iou: 0.0673	 acc: 0.8752	 sens: 0.0673	 spec: 0.8752
+
+Epoch 16 results:
+ Results on train:	 loss: 0.4929	 dice: 0.1858	 iou: 0.1180	 acc: 0.8801	 sens: 0.1180	 spec: 0.8801
+ Results on val:	 loss: 0.5201	 dice: 0.1117	 iou: 0.0660	 acc: 0.8793	 sens: 0.0660	 spec: 0.8793
+
+Epoch 17 results:
+ Results on train:	 loss: 0.4888	 dice: 0.1992	 iou: 0.1266	 acc: 0.8768	 sens: 0.1266	 spec: 0.8768
+ Results on val:	 loss: 0.5128	 dice: 0.0945	 iou: 0.0570	 acc: 0.8875	 sens: 0.0570	 spec: 0.8875
+
+Epoch 18 results:
+ Results on train:	 loss: 0.4856	 dice: 0.1949	 iou: 0.1237	 acc: 0.8822	 sens: 0.1237	 spec: 0.8822
+ Results on val:	 loss: 0.5134	 dice: 0.0702	 iou: 0.0430	 acc: 0.8906	 sens: 0.0430	 spec: 0.8906
+
+Epoch 19 results:
+ Results on train:	 loss: 0.4791	 dice: 0.2226	 iou: 0.1425	 acc: 0.8800	 sens: 0.1425	 spec: 0.8800
+ Results on val:	 loss: 0.4994	 dice: 0.1130	 iou: 0.0682	 acc: 0.8885	 sens: 0.0682	 spec: 0.8885
+
+Epoch 20 results:
+ Results on train:	 loss: 0.4754	 dice: 0.2342	 iou: 0.1499	 acc: 0.8814	 sens: 0.1499	 spec: 0.8814
+ Results on val:	 loss: 0.4970	 dice: 0.1592	 iou: 0.0974	 acc: 0.8844	 sens: 0.0974	 spec: 0.8844
+
+Epoch 21 results:
+ Results on train:	 loss: 0.4741	 dice: 0.2603	 iou: 0.1662	 acc: 0.8794	 sens: 0.1662	 spec: 0.8794
+ Results on val:	 loss: 0.4925	 dice: 0.1817	 iou: 0.1119	 acc: 0.8842	 sens: 0.1119	 spec: 0.8842
+
+Validation loss improved from 0.4970 to 0.4925.
+Epoch 22 results:
+ Results on train:	 loss: 0.4664	 dice: 0.2716	 iou: 0.1748	 acc: 0.8821	 sens: 0.1748	 spec: 0.8821
+ Results on val:	 loss: 0.4894	 dice: 0.1683	 iou: 0.1036	 acc: 0.8855	 sens: 0.1036	 spec: 0.8855
+
+Validation loss improved from 0.4925 to 0.4894.
+Epoch 23 results:
+ Results on train:	 loss: 0.4617	 dice: 0.2650	 iou: 0.1707	 acc: 0.8814	 sens: 0.1707	 spec: 0.8814
+ Results on val:	 loss: 0.4951	 dice: 0.1536	 iou: 0.0945	 acc: 0.8902	 sens: 0.0945	 spec: 0.8902
+
+Current validation loss (0.49507075548171997) is larger than for the previous epoch (0.48942238092422485)!
+Trained for 23 epochs.
+Early stopping applies!
+
+--- Fold 6/8 ---
+Epoch 1 results:
+ Results on train:	 loss: 0.6395	 dice: 0.0331	 iou: 0.0193	 acc: 0.8623	 sens: 0.0193	 spec: 0.8623
+ Results on val:	 loss: 0.7018	 dice: 0.0000	 iou: 0.0000	 acc: 0.8918	 sens: 0.0000	 spec: 0.8918
+
+Epoch 2 results:
+ Results on train:	 loss: 0.5942	 dice: 0.0545	 iou: 0.0332	 acc: 0.8712	 sens: 0.0332	 spec: 0.8712
+ Results on val:	 loss: 0.6464	 dice: 0.0000	 iou: 0.0000	 acc: 0.8918	 sens: 0.0000	 spec: 0.8918
+
+Epoch 3 results:
+ Results on train:	 loss: 0.5680	 dice: 0.0452	 iou: 0.0283	 acc: 0.8799	 sens: 0.0283	 spec: 0.8799
+ Results on val:	 loss: 0.6063	 dice: 0.0000	 iou: 0.0000	 acc: 0.8918	 sens: 0.0000	 spec: 0.8918
+
+Epoch 4 results:
+ Results on train:	 loss: 0.5527	 dice: 0.0403	 iou: 0.0254	 acc: 0.8810	 sens: 0.0254	 spec: 0.8810
+ Results on val:	 loss: 0.5629	 dice: 0.0000	 iou: 0.0000	 acc: 0.8918	 sens: 0.0000	 spec: 0.8918
+
+Epoch 5 results:
+ Results on train:	 loss: 0.5386	 dice: 0.0504	 iou: 0.0320	 acc: 0.8837	 sens: 0.0320	 spec: 0.8837
+ Results on val:	 loss: 0.5475	 dice: 0.0000	 iou: 0.0000	 acc: 0.8918	 sens: 0.0000	 spec: 0.8918
+
+Epoch 6 results:
+ Results on train:	 loss: 0.5314	 dice: 0.0431	 iou: 0.0275	 acc: 0.8833	 sens: 0.0275	 spec: 0.8833
+ Results on val:	 loss: 0.5478	 dice: 0.0000	 iou: 0.0000	 acc: 0.8918	 sens: 0.0000	 spec: 0.8918
+
+Epoch 7 results:
+ Results on train:	 loss: 0.5230	 dice: 0.0858	 iou: 0.0538	 acc: 0.8786	 sens: 0.0538	 spec: 0.8786
+ Results on val:	 loss: 0.5545	 dice: 0.0000	 iou: 0.0000	 acc: 0.8918	 sens: 0.0000	 spec: 0.8918
+
+Epoch 8 results:
+ Results on train:	 loss: 0.5133	 dice: 0.0946	 iou: 0.0601	 acc: 0.8817	 sens: 0.0601	 spec: 0.8817
+ Results on val:	 loss: 0.5551	 dice: 0.0000	 iou: 0.0000	 acc: 0.8918	 sens: 0.0000	 spec: 0.8918
+
+Epoch 9 results:
+ Results on train:	 loss: 0.5080	 dice: 0.1186	 iou: 0.0751	 acc: 0.8827	 sens: 0.0751	 spec: 0.8827
+ Results on val:	 loss: 0.5568	 dice: 0.0002	 iou: 0.0001	 acc: 0.8918	 sens: 0.0001	 spec: 0.8918
+
+Epoch 10 results:
+ Results on train:	 loss: 0.5044	 dice: 0.1352	 iou: 0.0851	 acc: 0.8807	 sens: 0.0851	 spec: 0.8807
+ Results on val:	 loss: 0.5266	 dice: 0.0218	 iou: 0.0130	 acc: 0.8924	 sens: 0.0130	 spec: 0.8924
+
+Epoch 11 results:
+ Results on train:	 loss: 0.5007	 dice: 0.1564	 iou: 0.0996	 acc: 0.8814	 sens: 0.0996	 spec: 0.8814
+ Results on val:	 loss: 0.5069	 dice: 0.0588	 iou: 0.0358	 acc: 0.8913	 sens: 0.0358	 spec: 0.8913
+
+Epoch 12 results:
+ Results on train:	 loss: 0.4919	 dice: 0.1780	 iou: 0.1124	 acc: 0.8817	 sens: 0.1124	 spec: 0.8817
+ Results on val:	 loss: 0.5020	 dice: 0.0607	 iou: 0.0371	 acc: 0.8923	 sens: 0.0371	 spec: 0.8923
+
+Epoch 13 results:
+ Results on train:	 loss: 0.4912	 dice: 0.1832	 iou: 0.1167	 acc: 0.8806	 sens: 0.1167	 spec: 0.8806
+ Results on val:	 loss: 0.4948	 dice: 0.0880	 iou: 0.0538	 acc: 0.8909	 sens: 0.0538	 spec: 0.8909
+
+Epoch 14 results:
+ Results on train:	 loss: 0.4854	 dice: 0.2035	 iou: 0.1287	 acc: 0.8808	 sens: 0.1287	 spec: 0.8808
+ Results on val:	 loss: 0.5015	 dice: 0.0748	 iou: 0.0463	 acc: 0.8922	 sens: 0.0463	 spec: 0.8922
+
+Epoch 15 results:
+ Results on train:	 loss: 0.4785	 dice: 0.2191	 iou: 0.1398	 acc: 0.8838	 sens: 0.1398	 spec: 0.8838
+ Results on val:	 loss: 0.4865	 dice: 0.1278	 iou: 0.0799	 acc: 0.8856	 sens: 0.0799	 spec: 0.8856
+
+Epoch 16 results:
+ Results on train:	 loss: 0.4730	 dice: 0.2459	 iou: 0.1576	 acc: 0.8825	 sens: 0.1576	 spec: 0.8825
+ Results on val:	 loss: 0.4825	 dice: 0.1254	 iou: 0.0782	 acc: 0.8880	 sens: 0.0782	 spec: 0.8880
+
+Epoch 17 results:
+ Results on train:	 loss: 0.4710	 dice: 0.2484	 iou: 0.1597	 acc: 0.8801	 sens: 0.1597	 spec: 0.8801
+ Results on val:	 loss: 0.4844	 dice: 0.0993	 iou: 0.0611	 acc: 0.8923	 sens: 0.0611	 spec: 0.8923
+
+Epoch 18 results:
+ Results on train:	 loss: 0.4692	 dice: 0.2438	 iou: 0.1561	 acc: 0.8843	 sens: 0.1561	 spec: 0.8843
+ Results on val:	 loss: 0.4717	 dice: 0.1809	 iou: 0.1127	 acc: 0.8857	 sens: 0.1127	 spec: 0.8857
+
+Epoch 19 results:
+ Results on train:	 loss: 0.4627	 dice: 0.2890	 iou: 0.1867	 acc: 0.8804	 sens: 0.1867	 spec: 0.8804
+ Results on val:	 loss: 0.4794	 dice: 0.1347	 iou: 0.0833	 acc: 0.8910	 sens: 0.0833	 spec: 0.8910
+
+Epoch 20 results:
+ Results on train:	 loss: 0.4600	 dice: 0.2890	 iou: 0.1868	 acc: 0.8854	 sens: 0.1868	 spec: 0.8854
+ Results on val:	 loss: 0.4678	 dice: 0.1615	 iou: 0.1003	 acc: 0.8907	 sens: 0.1003	 spec: 0.8907
+
+Epoch 21 results:
+ Results on train:	 loss: 0.4546	 dice: 0.2925	 iou: 0.1890	 acc: 0.8846	 sens: 0.1890	 spec: 0.8846
+ Results on val:	 loss: 0.4649	 dice: 0.1761	 iou: 0.1097	 acc: 0.8927	 sens: 0.1097	 spec: 0.8927
+
+Validation loss improved from 0.4678 to 0.4649.
+Epoch 22 results:
+ Results on train:	 loss: 0.4504	 dice: 0.3055	 iou: 0.1981	 acc: 0.8864	 sens: 0.1981	 spec: 0.8864
+ Results on val:	 loss: 0.4680	 dice: 0.1931	 iou: 0.1209	 acc: 0.8907	 sens: 0.1209	 spec: 0.8907
+
+Current validation loss (0.4679574966430664) is larger than for the previous epoch (0.46494007110595703)!
+Trained for 22 epochs.
+Early stopping applies!
+
+--- Fold 7/8 ---
+Epoch 1 results:
+ Results on train:	 loss: 0.7370	 dice: 0.1725	 iou: 0.1002	 acc: 0.6552	 sens: 0.1002	 spec: 0.6552
+ Results on val:	 loss: 0.7516	 dice: 0.0000	 iou: 0.0000	 acc: 0.8847	 sens: 0.0000	 spec: 0.8847
+
+Epoch 2 results:
+ Results on train:	 loss: 0.6733	 dice: 0.1256	 iou: 0.0751	 acc: 0.8062	 sens: 0.0751	 spec: 0.8062
+ Results on val:	 loss: 0.7197	 dice: 0.0000	 iou: 0.0000	 acc: 0.8847	 sens: 0.0000	 spec: 0.8847
+
+Epoch 3 results:
+ Results on train:	 loss: 0.6304	 dice: 0.0788	 iou: 0.0472	 acc: 0.8607	 sens: 0.0472	 spec: 0.8607
+ Results on val:	 loss: 0.6767	 dice: 0.0000	 iou: 0.0000	 acc: 0.8847	 sens: 0.0000	 spec: 0.8847
+
+Epoch 4 results:
+ Results on train:	 loss: 0.5974	 dice: 0.0696	 iou: 0.0430	 acc: 0.8718	 sens: 0.0430	 spec: 0.8718
+ Results on val:	 loss: 0.6200	 dice: 0.0000	 iou: 0.0000	 acc: 0.8847	 sens: 0.0000	 spec: 0.8847
+
+Epoch 5 results:
+ Results on train:	 loss: 0.5738	 dice: 0.0754	 iou: 0.0467	 acc: 0.8765	 sens: 0.0467	 spec: 0.8765
+ Results on val:	 loss: 0.5946	 dice: 0.0000	 iou: 0.0000	 acc: 0.8847	 sens: 0.0000	 spec: 0.8847
+
+Epoch 6 results:
+ Results on train:	 loss: 0.5578	 dice: 0.0577	 iou: 0.0359	 acc: 0.8815	 sens: 0.0359	 spec: 0.8815
+ Results on val:	 loss: 0.5743	 dice: 0.0000	 iou: 0.0000	 acc: 0.8847	 sens: 0.0000	 spec: 0.8847
+
+Epoch 7 results:
+ Results on train:	 loss: 0.5403	 dice: 0.0679	 iou: 0.0428	 acc: 0.8813	 sens: 0.0428	 spec: 0.8813
+ Results on val:	 loss: 0.5612	 dice: 0.0000	 iou: 0.0000	 acc: 0.8847	 sens: 0.0000	 spec: 0.8847
+
+Epoch 8 results:
+ Results on train:	 loss: 0.5317	 dice: 0.0781	 iou: 0.0493	 acc: 0.8822	 sens: 0.0493	 spec: 0.8822
+ Results on val:	 loss: 0.5542	 dice: 0.0054	 iou: 0.0031	 acc: 0.8849	 sens: 0.0031	 spec: 0.8849
+
+Epoch 9 results:
+ Results on train:	 loss: 0.5240	 dice: 0.0988	 iou: 0.0618	 acc: 0.8811	 sens: 0.0618	 spec: 0.8811
+ Results on val:	 loss: 0.5456	 dice: 0.0077	 iou: 0.0044	 acc: 0.8851	 sens: 0.0044	 spec: 0.8851
+
+Epoch 10 results:
+ Results on train:	 loss: 0.5152	 dice: 0.1200	 iou: 0.0757	 acc: 0.8780	 sens: 0.0757	 spec: 0.8780
+ Results on val:	 loss: 0.5339	 dice: 0.0444	 iou: 0.0275	 acc: 0.8834	 sens: 0.0275	 spec: 0.8834
+
+Epoch 11 results:
+ Results on train:	 loss: 0.5097	 dice: 0.1448	 iou: 0.0911	 acc: 0.8791	 sens: 0.0911	 spec: 0.8791
+ Results on val:	 loss: 0.5242	 dice: 0.0538	 iou: 0.0315	 acc: 0.8784	 sens: 0.0315	 spec: 0.8784
+
+Epoch 12 results:
+ Results on train:	 loss: 0.5036	 dice: 0.1484	 iou: 0.0930	 acc: 0.8807	 sens: 0.0930	 spec: 0.8807
+ Results on val:	 loss: 0.5179	 dice: 0.0752	 iou: 0.0470	 acc: 0.8796	 sens: 0.0470	 spec: 0.8796
+
+Epoch 13 results:
+ Results on train:	 loss: 0.4994	 dice: 0.1508	 iou: 0.0945	 acc: 0.8837	 sens: 0.0945	 spec: 0.8837
+ Results on val:	 loss: 0.5062	 dice: 0.1445	 iou: 0.0888	 acc: 0.8767	 sens: 0.0888	 spec: 0.8767
+
+Epoch 14 results:
+ Results on train:	 loss: 0.4958	 dice: 0.1817	 iou: 0.1137	 acc: 0.8797	 sens: 0.1137	 spec: 0.8797
+ Results on val:	 loss: 0.4996	 dice: 0.1114	 iou: 0.0678	 acc: 0.8832	 sens: 0.0678	 spec: 0.8832
+
+Epoch 15 results:
+ Results on train:	 loss: 0.4895	 dice: 0.1900	 iou: 0.1197	 acc: 0.8821	 sens: 0.1197	 spec: 0.8821
+ Results on val:	 loss: 0.4933	 dice: 0.1633	 iou: 0.1019	 acc: 0.8766	 sens: 0.1019	 spec: 0.8766
+
+Epoch 16 results:
+ Results on train:	 loss: 0.4857	 dice: 0.2047	 iou: 0.1298	 acc: 0.8809	 sens: 0.1298	 spec: 0.8809
+ Results on val:	 loss: 0.5011	 dice: 0.1511	 iou: 0.0922	 acc: 0.8828	 sens: 0.0922	 spec: 0.8828
+
+Epoch 17 results:
+ Results on train:	 loss: 0.4842	 dice: 0.2092	 iou: 0.1331	 acc: 0.8841	 sens: 0.1331	 spec: 0.8841
+ Results on val:	 loss: 0.4879	 dice: 0.2132	 iou: 0.1340	 acc: 0.8740	 sens: 0.1340	 spec: 0.8740
+
+Epoch 18 results:
+ Results on train:	 loss: 0.4800	 dice: 0.2026	 iou: 0.1293	 acc: 0.8822	 sens: 0.1293	 spec: 0.8822
+ Results on val:	 loss: 0.4858	 dice: 0.1783	 iou: 0.1097	 acc: 0.8813	 sens: 0.1097	 spec: 0.8813
+
+Epoch 19 results:
+ Results on train:	 loss: 0.4729	 dice: 0.2146	 iou: 0.1366	 acc: 0.8871	 sens: 0.1366	 spec: 0.8871
+ Results on val:	 loss: 0.4855	 dice: 0.2872	 iou: 0.1832	 acc: 0.8692	 sens: 0.1832	 spec: 0.8692
+
+Epoch 20 results:
+ Results on train:	 loss: 0.4707	 dice: 0.2504	 iou: 0.1602	 acc: 0.8814	 sens: 0.1602	 spec: 0.8814
+ Results on val:	 loss: 0.4865	 dice: 0.2116	 iou: 0.1335	 acc: 0.8811	 sens: 0.1335	 spec: 0.8811
+
+Epoch 21 results:
+ Results on train:	 loss: 0.4649	 dice: 0.2692	 iou: 0.1725	 acc: 0.8847	 sens: 0.1725	 spec: 0.8847
+ Results on val:	 loss: 0.4839	 dice: 0.2895	 iou: 0.1832	 acc: 0.8733	 sens: 0.1832	 spec: 0.8733
+
+Validation loss improved from 0.4865 to 0.4839.
+Epoch 22 results:
+ Results on train:	 loss: 0.4610	 dice: 0.2818	 iou: 0.1813	 acc: 0.8845	 sens: 0.1813	 spec: 0.8845
+ Results on val:	 loss: 0.4861	 dice: 0.3122	 iou: 0.2001	 acc: 0.8645	 sens: 0.2001	 spec: 0.8645
+
+Current validation loss (0.4860691428184509) is larger than for the previous epoch (0.48388761281967163)!
+Trained for 22 epochs.
+Early stopping applies!
+
+--- Fold 8/8 ---
+Epoch 1 results:
+ Results on train:	 loss: 0.7725	 dice: 0.1808	 iou: 0.1037	 acc: 0.5596	 sens: 0.1037	 spec: 0.5596
+ Results on val:	 loss: 0.7942	 dice: 0.2288	 iou: 0.1339	 acc: 0.1372	 sens: 0.1339	 spec: 0.1372
+
+Epoch 2 results:
+ Results on train:	 loss: 0.7049	 dice: 0.1383	 iou: 0.0806	 acc: 0.7578	 sens: 0.0806	 spec: 0.7578
+ Results on val:	 loss: 0.7720	 dice: 0.0423	 iou: 0.0238	 acc: 0.8476	 sens: 0.0238	 spec: 0.8476
+
+Epoch 3 results:
+ Results on train:	 loss: 0.6468	 dice: 0.0918	 iou: 0.0550	 acc: 0.8504	 sens: 0.0550	 spec: 0.8504
+ Results on val:	 loss: 0.7254	 dice: 0.0006	 iou: 0.0003	 acc: 0.8647	 sens: 0.0003	 spec: 0.8647
+
+Epoch 4 results:
+ Results on train:	 loss: 0.6074	 dice: 0.0599	 iou: 0.0366	 acc: 0.8694	 sens: 0.0366	 spec: 0.8694
+ Results on val:	 loss: 0.6784	 dice: 0.0000	 iou: 0.0000	 acc: 0.8655	 sens: 0.0000	 spec: 0.8655
+
+Epoch 5 results:
+ Results on train:	 loss: 0.5814	 dice: 0.0340	 iou: 0.0211	 acc: 0.8860	 sens: 0.0211	 spec: 0.8860
+ Results on val:	 loss: 0.6445	 dice: 0.0000	 iou: 0.0000	 acc: 0.8655	 sens: 0.0000	 spec: 0.8655
+
+Epoch 6 results:
+ Results on train:	 loss: 0.5630	 dice: 0.0391	 iou: 0.0244	 acc: 0.8854	 sens: 0.0244	 spec: 0.8854
+ Results on val:	 loss: 0.6171	 dice: 0.0031	 iou: 0.0017	 acc: 0.8662	 sens: 0.0017	 spec: 0.8662
+
+Epoch 7 results:
+ Results on train:	 loss: 0.5518	 dice: 0.0494	 iou: 0.0306	 acc: 0.8836	 sens: 0.0306	 spec: 0.8836
+ Results on val:	 loss: 0.6050	 dice: 0.0133	 iou: 0.0084	 acc: 0.8669	 sens: 0.0084	 spec: 0.8669
+
+Epoch 8 results:
+ Results on train:	 loss: 0.5363	 dice: 0.0448	 iou: 0.0284	 acc: 0.8863	 sens: 0.0284	 spec: 0.8863
+ Results on val:	 loss: 0.5930	 dice: 0.0217	 iou: 0.0141	 acc: 0.8666	 sens: 0.0141	 spec: 0.8666
+
+Epoch 9 results:
+ Results on train:	 loss: 0.5290	 dice: 0.0653	 iou: 0.0408	 acc: 0.8829	 sens: 0.0408	 spec: 0.8829
+ Results on val:	 loss: 0.5878	 dice: 0.0190	 iou: 0.0123	 acc: 0.8670	 sens: 0.0123	 spec: 0.8670
+
+Epoch 10 results:
+ Results on train:	 loss: 0.5208	 dice: 0.0665	 iou: 0.0421	 acc: 0.8867	 sens: 0.0421	 spec: 0.8867
+ Results on val:	 loss: 0.5785	 dice: 0.0321	 iou: 0.0205	 acc: 0.8660	 sens: 0.0205	 spec: 0.8660
+
+Epoch 11 results:
+ Results on train:	 loss: 0.5158	 dice: 0.0777	 iou: 0.0487	 acc: 0.8849	 sens: 0.0487	 spec: 0.8849
+ Results on val:	 loss: 0.5792	 dice: 0.0632	 iou: 0.0392	 acc: 0.8669	 sens: 0.0392	 spec: 0.8669
+
+Epoch 12 results:
+ Results on train:	 loss: 0.5120	 dice: 0.0953	 iou: 0.0596	 acc: 0.8848	 sens: 0.0596	 spec: 0.8848
+ Results on val:	 loss: 0.5710	 dice: 0.1230	 iou: 0.0784	 acc: 0.8590	 sens: 0.0784	 spec: 0.8590
+
+Epoch 13 results:
+ Results on train:	 loss: 0.5076	 dice: 0.0766	 iou: 0.0479	 acc: 0.8863	 sens: 0.0479	 spec: 0.8863
+ Results on val:	 loss: 0.5721	 dice: 0.1097	 iou: 0.0677	 acc: 0.8644	 sens: 0.0677	 spec: 0.8644
+
+Epoch 14 results:
+ Results on train:	 loss: 0.4991	 dice: 0.1068	 iou: 0.0672	 acc: 0.8867	 sens: 0.0672	 spec: 0.8867
+ Results on val:	 loss: 0.5617	 dice: 0.1423	 iou: 0.0919	 acc: 0.8585	 sens: 0.0919	 spec: 0.8585
+
+Epoch 15 results:
+ Results on train:	 loss: 0.4962	 dice: 0.1330	 iou: 0.0835	 acc: 0.8833	 sens: 0.0835	 spec: 0.8833
+ Results on val:	 loss: 0.5611	 dice: 0.1518	 iou: 0.0970	 acc: 0.8649	 sens: 0.0970	 spec: 0.8649
+
+Epoch 16 results:
+ Results on train:	 loss: 0.4926	 dice: 0.1290	 iou: 0.0808	 acc: 0.8867	 sens: 0.0808	 spec: 0.8867
+ Results on val:	 loss: 0.5530	 dice: 0.1515	 iou: 0.0968	 acc: 0.8641	 sens: 0.0968	 spec: 0.8641
+
+Epoch 17 results:
+ Results on train:	 loss: 0.4895	 dice: 0.1740	 iou: 0.1089	 acc: 0.8821	 sens: 0.1089	 spec: 0.8821
+ Results on val:	 loss: 0.5529	 dice: 0.1640	 iou: 0.1045	 acc: 0.8628	 sens: 0.1045	 spec: 0.8628
+
+Epoch 18 results:
+ Results on train:	 loss: 0.4836	 dice: 0.1610	 iou: 0.1019	 acc: 0.8857	 sens: 0.1019	 spec: 0.8857
+ Results on val:	 loss: 0.5507	 dice: 0.1498	 iou: 0.0953	 acc: 0.8688	 sens: 0.0953	 spec: 0.8688
+
+Epoch 19 results:
+ Results on train:	 loss: 0.4771	 dice: 0.1755	 iou: 0.1115	 acc: 0.8876	 sens: 0.1115	 spec: 0.8876
+ Results on val:	 loss: 0.5495	 dice: 0.1721	 iou: 0.1107	 acc: 0.8631	 sens: 0.1107	 spec: 0.8631
+
+Epoch 20 results:
+ Results on train:	 loss: 0.4744	 dice: 0.2187	 iou: 0.1383	 acc: 0.8832	 sens: 0.1383	 spec: 0.8832
+ Results on val:	 loss: 0.5361	 dice: 0.2033	 iou: 0.1306	 acc: 0.8673	 sens: 0.1306	 spec: 0.8673
+
+Epoch 21 results:
+ Results on train:	 loss: 0.4721	 dice: 0.2258	 iou: 0.1431	 acc: 0.8849	 sens: 0.1431	 spec: 0.8849
+ Results on val:	 loss: 0.5364	 dice: 0.2234	 iou: 0.1439	 acc: 0.8625	 sens: 0.1439	 spec: 0.8625
+
+Current validation loss (0.5363574028015137) is larger than for the previous epoch (0.5361431837081909)!
+Trained for 21 epochs.
+Early stopping applies!
+
+--- Performance across all folds ---
+Avg. train_loss: 0.4671
+Avg. train_dice: 0.2564
+Avg. train_iou: 0.1642
+Avg. train_acc: 0.8826
+Avg. train_sens: 0.2728
+Avg. train_spec: 0.9604
+Avg. val_loss: 0.4887
+Avg. val_dice: 0.1938
+Avg. val_iou: 0.1217
+Avg. val_acc: 0.8814
+Avg. val_sens: 0.1943
+Avg. val_spec: 0.9682
+Avg. n_epochs: 22.5000
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 27036023: <UNet_BCE_loss> in cluster <dcc> Done
+
+Job <UNet_BCE_loss> was submitted from host <hpclogin1> by user <s214397> in cluster <dcc> at Sat Nov 15 15:27:49 2025
+Job was executed on host(s) <4*n-62-18-13>, in queue <c02516>, as user <s214397> in cluster <dcc> at Sat Nov 15 15:28:10 2025
+</zhome/86/c/167853> was used as the home directory.
+</zhome/86/c/167853/02516-image-segmentation> was used as the working directory.
+Started at Sat Nov 15 15:28:10 2025
+Terminated at Sat Nov 15 15:30:16 2025
+Results reported at Sat Nov 15 15:30:16 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+### ------------- specify queue name ----------------
+#BSUB -q c02516
+### ------------- specify gpu request----------------
+#BSUB -gpu "num=1:mode=exclusive_process"
+### ------------- specify job name ----------------
+#BSUB -J UNet_BCE_loss
+### ------------- specify number of cores ----------------
+#BSUB -n 4
+#BSUB -R "span[hosts=1]"
+
+#BSUB -R "rusage[mem=20GB]"
+
+### ------------- specify wall-clock time (max allowed is 12:00)---------------- 
+#BSUB -W 08:00
+
+#BSUB -o OUTPUT_FILE%J.out
+#BSUB -e OUTPUT_FILE%J.err
+
+source venv_proj3/bin/activate
+python model_experiment.py
+#python eval.py
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   114.95 sec.
+    Max Memory :                                 936 MB
+    Average Memory :                             933.33 MB
+    Total Requested Memory :                     81920.00 MB
+    Delta Memory :                               80984.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                8
+    Run time :                                   127 sec.
+    Turnaround time :                            147 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <OUTPUT_FILE27036023.err> for stderr output of this job.
+
